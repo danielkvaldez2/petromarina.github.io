@@ -8,9 +8,7 @@
  
   
   if(!empty($_POST))
-	{  
-  
-          
+	{           
        $id= stripslashes($_POST['idComent']);                //   aca estoy
        $name= stripslashes($_POST['name_blog']);          //   aca estoy
        $email= stripslashes($_POST['email_blog']);            //   aca estoy
@@ -21,6 +19,7 @@
  
        $url = 'https://www.google.com/recaptcha/api/siteverify';
        $data = array(
+         //'secret' => '6LePTdsUAAAAAC8V3vBC0nLo_tQfmUpo3Z2V_XZ6',  clave servidor
          'secret' => '6LdRJnUUAAAAAPDBPKoSbUc40EzAfRuAHMjJSsh1',
          'response' => $recaptcha
        );
@@ -34,28 +33,22 @@
        $verify = file_get_contents($url, false, $context);
        $captcha_success = json_decode($verify);
        if ($captcha_success->success) {
-
           $obj_comment = new UploadClass();
           $result = $obj_comment->blogListComentSave($id,$name,$email, $text, $date); 
           if($result <> null){ // echo "<script> alert('GUARDADO...');</script>";  
                             $_POST = array();        // echo $result;
                             }
-
        } else {
-         // Eres un robot!
+        
+        // echo "<script> alert('NO GUARDADO Eres un robot!...');</script>";
+        // Eres un robot!  exit; 
+
        }
-
   }
-
   $id = $_GET['id'];
   $obj_prod3 = new UploadClass();
-  
   $row7 = $obj_prod3->blogListId($id);
   $row6 = $obj_prod3->blogListComentId($id); 
-
- 
-
-
 ?>
  
 
@@ -202,11 +195,11 @@
             <!-- End Social Links -->
         <!-- Text Intro -->
         <div class="blog-item-body mb-30">
-           <p><?php echo $row7[$i]['text_blog'];   ?>
+           <p><?php echo $row7[$i]['text_blog']; ?>
             </p>
         </div>
         </br> 
-        <div class="sharethis-inline-reaction-buttons"></div>
+       
         </br> 
         
   <?php  }  ?>
@@ -237,6 +230,7 @@
             </div>
             <div class="form-group row">
                 <div class="g-recaptcha" data-sitekey="6LdRJnUUAAAAAAsfktrBwMWcSG5dXnfWK0C1YKbS"></div>
+            <!--    <div class="g-recaptcha" data-sitekey="6LePTdsUAAAAAN4oGvInMq4MGpW63zok62dqZVt1"></div>   *****clave servidor ***** -->
             </div>
 
             </br>

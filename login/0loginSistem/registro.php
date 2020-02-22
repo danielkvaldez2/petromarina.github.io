@@ -19,7 +19,8 @@
 		
 		$activo = 0;
 		$tipo_usuario = 2;
-		$secret = '6Le17tkUAAAAAGohddUQfbWYcTuPNL_LTY7I8Pf-';
+		//$secret = '6Le17tkUAAAAAGohddUQfbWYcTuPNL_LTY7I8Pf-';    ***clave servidor
+		$secret = '6LdRJnUUAAAAAPDBPKoSbUc40EzAfRuAHMjJSsh1';
 		
 		if(!$captcha){
 			$errors[] = "Por favor verifica el captcha";
@@ -182,7 +183,10 @@
 							
 							<div class="form-group">
 								<label for="captcha" class="col-md-2 control-label"></label>
-								<div class="g-recaptcha col-md-8" data-sitekey="6Le17tkUAAAAAJ_A-jyCMgK2mDWZWdMxpfXVEItC"></div>
+							<!--	<div class="g-recaptcha col-md-8" 
+								data-sitekey="6Le17tkUAAAAAJ_A-jyCMgK2mDWZWdMxpfXVEItC"></div> servidor-->
+								<div class="g-recaptcha col-md-8" 
+								data-sitekey="6LdRJnUUAAAAAAsfktrBwMWcSG5dXnfWK0C1YKbS"></div>
 							</div>
 							
 							<div class="form-group">                                      
