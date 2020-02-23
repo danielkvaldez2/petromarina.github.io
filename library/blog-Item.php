@@ -4,8 +4,6 @@
   require_once "UploadClass.php";
  
 
- 
- 
   
   if(!empty($_POST))
 	{           
@@ -19,8 +17,8 @@
  
        $url = 'https://www.google.com/recaptcha/api/siteverify';
        $data = array(
-         //'secret' => '6LePTdsUAAAAAC8V3vBC0nLo_tQfmUpo3Z2V_XZ6',  clave servidor
-         'secret' => '6LdRJnUUAAAAAPDBPKoSbUc40EzAfRuAHMjJSsh1',
+         'secret' => '6LePTdsUAAAAAC8V3vBC0nLo_tQfmUpo3Z2V_XZ6', // clave servidor
+         //'secret' => '6LdRJnUUAAAAAPDBPKoSbUc40EzAfRuAHMjJSsh1',
          'response' => $recaptcha
        );
        $options = array(
@@ -45,14 +43,14 @@
 
        }
   }
+
   $id = $_GET['id'];
   $obj_prod3 = new UploadClass();
+ 
   $row7 = $obj_prod3->blogListId($id);
   $row6 = $obj_prod3->blogListComentId($id); 
 ?>
  
-
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -229,8 +227,8 @@
                   <textarea class="form-control  "  name ="comment_blog"  id="comment_blog" placeholder="write this comment" required></textarea>
             </div>
             <div class="form-group row">
-                <div class="g-recaptcha" data-sitekey="6LdRJnUUAAAAAAsfktrBwMWcSG5dXnfWK0C1YKbS"></div>
-            <!--    <div class="g-recaptcha" data-sitekey="6LePTdsUAAAAAN4oGvInMq4MGpW63zok62dqZVt1"></div>   *****clave servidor ***** -->
+              <!--   <div class="g-recaptcha" data-sitekey="6LdRJnUUAAAAAAsfktrBwMWcSG5dXnfWK0C1YKbS"></div> -->
+               <div class="g-recaptcha" data-sitekey="6LePTdsUAAAAAN4oGvInMq4MGpW63zok62dqZVt1"></div>  <!--  *****clave servidor ***** -->
             </div>
 
             </br>
@@ -292,7 +290,7 @@
 
         <!-- Read More Link -->
         <div class="blog-item-foot text-center">
-              <button type="button" class="btn btn-primary" onClick="window.location='blog-list.php';" title="RETURN" > Return...  </button>
+              <button type="button" class="btn btn-primary" onClick="window.location='blog-list';" title="RETURN" > Return...  </button>
         </div>
 </div>
 <!--  --------------End Post------------------------------------------------------ -->

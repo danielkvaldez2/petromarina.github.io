@@ -160,7 +160,7 @@
                   </div>
                   <!-- Read More Link -->
                   <div class="blog-item-foot text-center">
-                    <a href="blog-item.php?id=<?php echo $row8[$i]['id_blog']; ?>" style="background-color: #003142;" class="btn btn-mod  btn-small"> See Everything... </a>
+                    <a href="blog-item?id=<?php echo $row8[$i]['id_blog']; ?>" style="background-color: #003142;" class="btn btn-mod  btn-small"> See Everything... </a>
                             </div>
     </div>
     <!-- End Post -->

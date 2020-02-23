@@ -112,7 +112,7 @@ public function dataBaseShip02($id)
 
    public function blogList()
 	 {
-	 	$sql = "SELECT * FROM `tbl_blog_list` ORDER BY `id_blog` DESC ";
+	 	$sql = "SELECT * FROM `tbl_blog_list` ORDER BY `id_blog` ASC ";
 	 	$stm = $this->_getDbh()->prepare($sql);
 	 	$stm->execute();
 	 	return $stm->fetchAll(PDO::FETCH_ASSOC);
