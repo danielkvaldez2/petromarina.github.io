@@ -119,7 +119,7 @@
           $(".btnPorts2").css("display", "block");
           $(".btnPorts3").css("display", "block");
           
-          $("#viewPorts").load("portsPetromarinaPlay?id="+idi+"&vid="+video+"");
+          $("#viewPorts").load("portsPetromarinaPlay?id="+idi+"&vid="+video+""); //mofif
           /*
           $("#viewPorts01").load("portsPetromarinaData.php");
           

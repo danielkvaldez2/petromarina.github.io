@@ -51,19 +51,17 @@
                     </br>
                     <img  src="../img/dataBaseShip/flags/<?php echo $row3[$i]['flag']; ?>">   
                     <h4><i class="fas fa-anchor"></i> Port of <?php echo $row3[$i]['name']; ?></h4> 
-                    <h5><?php echo $row3[$i]['direccion']; ?></h5>
+                    <h6><?php echo $row3[$i]['direccion']; ?></h6>
             </div><!--div tituloMo-->  
             <div class="cuerpoMo">      
                     <b>Phone:</b> (+1 562) 471-8677</br>
                     <b> Email:</b> info@petromarina.net</br>
                     <h5><?php echo $row3[$i]['country']; ?></h5>
-                    <b>Surface: </b>  <?php echo $row3[$i]['surface']; ?> 
-                    <b>Opening: </b>  <?php echo $row3[$i]['opening']; ?></br>
-                    <b>Containers: </b>  <?php echo $row3[$i]['annualcontainers']; ?>(TEU) </br>
-                    <b>Load: </b> 	 <?php echo $row3[$i]['annualtonel']; ?>  
-                    <b>Docks: </b> <?php echo $row3[$i]['docks']; ?> </br>
-                    <b>Depth: </b> <?php echo $row3[$i]['depth']; ?>  
-                    <b>Ships: </b> <?php echo $row3[$i]['annualships']; ?> </br>	
+                    <b>Port Authority </br> </b>  <?php echo $row3[$i]['portAuthority']; // ?> </br>
+                    <b>Port Type: </b>  <?php echo $row3[$i]['portType']; ?></br>
+                    <b>Port Size: </b>  <?php echo $row3[$i]['portSize']; ?> </br>
+                    <b>Code: </b> <?php echo $row3[$i]['locode']; ?> </br> 
+                   
             </div><!--div cuerpoMo--> 
             <div  class="foto" >
                       <img src="../img/ports/<?php echo $row3[$i]['imagen']; ?>" alt="">

@@ -98,7 +98,7 @@
 						<h3>ERROR AL MODIFICAR</h3>
 					<?php } ?>
 					
-					<a href="welcome.php" class="btn btn-primary">Regresar</a>
+					<a href="welcomeNoticias.php" class="btn btn-primary">Regresar</a>
 					
 				</div>
 			</div>

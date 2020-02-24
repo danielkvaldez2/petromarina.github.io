@@ -152,7 +152,7 @@ if($_SESSION['tipo_usuario']==1) {
 
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<a href="welcome.php" class="btn btn-default">Regresar</a>
+						<a href="welcomeNoticias.php" class="btn btn-default">Regresar</a>
 						<button type="submit" class="btn btn-primary">Guardar</button>
 					</div>
 				</div>
