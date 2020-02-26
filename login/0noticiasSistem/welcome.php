@@ -43,6 +43,8 @@
 		<button class="btn btn-info my-2 my-sm-0 mb-3 "title="Cerrar Sesion" onclick = "window.location.href='../logout.php'">  Cerrar Sesi&oacute;n </button>
 			
 		</br></br>
+
+		<div class="shadow p-3 mb-5 bg-white rounded">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
 			<a class="navbar-brand" href="#"> <?php echo 'Bienvenid@ '.utf8_decode($row['nombre']); ?> </a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,11 +59,23 @@
 					</li>
 
 					<li class="nav-item active">
-						<a class="nav-link" href="welcomeNoticias.php" title="News">News</a>
+						<a class="btn btn-info" href="welcomeNoticias.php" title="News"> News </a>
 					</li>
-
+					&nbsp;&nbsp;&nbsp;
 					<li class="nav-item active">
-						<a class="nav-link" href="welcomePorts.php" title="Ports">Ports</a>
+						<a class="btn btn-success" href="welcomePorts.php" title="Ports"> Ports </a>
+					</li>
+					&nbsp;&nbsp;&nbsp;
+					<li class="nav-item active">
+						<a class="btn btn-warning" href="welcomeShop.php" title="Shop"> Shop </a>
+					</li>
+					&nbsp;&nbsp;&nbsp;
+					<li class="nav-item active">
+						<a class="btn btn-danger" href="welcomeComments.php" title="Comments"> Comments </a>
+					</li>
+					&nbsp;&nbsp;&nbsp;
+					<li class="nav-item active">
+						<a class="btn btn-dark" href="welcomeShips.php" title="Ships"> Ships </a>
 					</li>
 				<?php } ?>
 				
@@ -72,7 +86,7 @@
 				
 			</div>
 		</nav>
-
+   </div>
 
 
 
@@ -81,4 +95,5 @@
 	</div><!-- Container -->
 		
 	</body>
+
 </html>		

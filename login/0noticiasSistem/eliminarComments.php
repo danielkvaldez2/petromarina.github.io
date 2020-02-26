@@ -12,7 +12,7 @@
 
 	$id = $_GET['id'];
 	
-	$sql = "DELETE FROM personas WHERE id = '$id'";
+	$sql = "DELETE FROM tbl_blog_comment_list WHERE id_comment = '$id'";
 	$resultado = $mysqli->query($sql);
 	
 	/*eliminarDir('files/'.$id);
@@ -52,12 +52,12 @@
 			<div class="row">
 				<div class="row" style="text-align:center">
 				<?php if($resultado) {  
-					header("location: welcomeNoticias.php");
+					header("location: welcomeComments.php");
 			      } else { ?>
 				<h3>ERROR AL ELIMINAR</h3>
 				<?php } ?>
 				
-				<a href="welcomeNoticias.php" class="btn btn-primary">Regresar</a>
+				<a href="welcomeComments.php" class="btn btn-primary">Regresar</a>
 				
 				</div>
 			</div>

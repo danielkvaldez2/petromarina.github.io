@@ -8,7 +8,7 @@
    require '../funcs/loginConexion.php';
    require '../funcs/loginFuncs.php';
 
-      $idR = $_GET["recordid"];
+      $idR = $_GET["id"];
 	  $idUsuario = $_SESSION["id_usuario"];
 
 	  $sql = "SELECT id, nombre FROM usuarios WHERE id = '$idUsuario'";
@@ -81,7 +81,7 @@
 
 			<div class="shadow p-3 mb-5 bg-white rounded">
 			<div class="card" >
-			<img src="../../img/ports/<?php echo $row['imagen']; ?>" class="card-img-top" alt="<?php echo $row['name']; ?>">
+			<img src="../../img/ports/<?php echo $row['imagen']; ?>" class="card-img-top" height="300" width ="400" alt="<?php echo $row['name']; ?>">
             </div> 
 			</div> 
 			<div class="card-body">	
@@ -101,20 +101,12 @@
 				<li class="list-group-item"><span class="text-secondary"><small>Email:</small></span> 
 				<strong><?php echo $row['email']; ?></strong>
 				</li>
-				<li class="list-group-item">	
-					<a href="mailto:<?php echo $row['email']; ?>" title= "Send Email: <?php echo $row['email']; ?>" class="btn btn-success">Send Email: </a> 
-				</li>
 				<li class="list-group-item"><span class="text-secondary"><small>Web Site:</small></span> 
 				<strong><?php echo $row['website']; ?></strong>
 				</li>
 				<li class="list-group-item"><span class="text-secondary"><small>Code:</small></span> 
 				<strong><?php echo $row['locode']; ?></strong>
 				</li>
-				<li class="list-group-item">
-					<button type="button" class="btn btn-info" data-toggle="modal" data-target="#staticBackdrop">Call - <?php echo $row['name']; ?> </button> 
-				 
-				</li>
-			
 				<li class="list-group-item"><span class="text-secondary"><small>Opening:</small></span> 
 				<strong><?php echo $row['opening']; ?></strong>
 				</li>
@@ -153,7 +145,7 @@
 			<?php }  ?>
 			</br>
 
-		    	<div class="sharethis-inline-share-buttons"></div>
+		    	 
 			</br>	  
 
 				<button class="btn btn-info my-2 my-sm-0 mb-3 "title="Return" onclick = "window.location.href='welcomePorts.php'">  Return </button>
@@ -161,25 +153,7 @@
 	</div><!-- Container -->
 
 	</br>	</br> 
-
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Petromarina News</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
-
-
-      </div> 
-    </div>
-  </div>
-</div>
+ 
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

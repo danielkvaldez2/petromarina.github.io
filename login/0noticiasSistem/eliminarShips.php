@@ -12,7 +12,7 @@
 
 	$id = $_GET['id'];
 	
-	$sql = "DELETE FROM personas WHERE id = '$id'";
+	$sql = "DELETE FROM databaseship WHERE 	id = '$id'";
 	$resultado = $mysqli->query($sql);
 	
 	/*eliminarDir('files/'.$id);
@@ -52,12 +52,12 @@
 			<div class="row">
 				<div class="row" style="text-align:center">
 				<?php if($resultado) {  
-					header("location: welcomeNoticias.php");
+					header("location: welcomeShips.php");
 			      } else { ?>
 				<h3>ERROR AL ELIMINAR</h3>
 				<?php } ?>
 				
-				<a href="welcomeNoticias.php" class="btn btn-primary">Regresar</a>
+				<a href="welcomeShips.php" class="btn btn-primary">Regresar</a>
 				
 				</div>
 			</div>
