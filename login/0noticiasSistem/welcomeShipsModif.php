@@ -77,44 +77,68 @@
 			<div class="shadow p-3 mb-5 bg-white rounded">
 			<h5 class="card-title"> <?php echo $row['name']; ?>  </h5>
 				<div class="card-body">
-					<img  height="300" src="../../img/dataBaseShip/<?php echo $row['imagen']; ?>">
+					<img width="340" src="../../img/dataBaseShip/<?php echo $row['imagen']; ?>">
 				</div>
 			</div>
-			<div class="card-body">
-				<h5 class="card-title"> <?php echo $row['typeship']; ?>  </h5>
-				<p class="card-text"> <?php echo $row['maker']; ?> </p>
-				<p class="card-text"> <?php echo $row['year']; ?> </p>
-			</div> 
-			<span><img width="60px" height="40px" src="../../img/dataBaseShip/flags/<?php echo $row['flag']; ?>"> - <?php echo $row['country']; ?></span>
+			<table class="table table-striped table-hover table-dark">
+                    <thead>
+                      <tr>
+                        <th scope="col" colspan="4" style="text-align:center; font-size: 2em;" ><?php echo $row['name']; ?></th>
+                    
+                      </tr>
+                    </thead>
+                      <thead>
+                      <tr>
+                        <th scope="col" colspan="2" style="text-align:center; font-size: 1.5em;" >
+                        <img width="60px" height="40px" src="../../img/dataBaseShip/flags/<?php echo $row['flag']; ?>"> 
+                      </th>
+                        <th scope="col" colspan="2" style="text-align:left; font-size: 1.5em;" ><?php echo $row['country']; ?></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row"  style="text-align: right; font-size: 1em;" >IMO</th>
+                        <td style="text-align: left; font-size: 1.2em;"><?php echo $row['imo']; ?></td>
+                        <th scope="row"  style="text-align: right; font-size: 1em;" >MMSI</td>
+                        <td style="text-align: left; font-size: 1.2em;"><?php echo $row['mmsi']; ?></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"  style="text-align: right; font-size: 1em;" >Callsign</th>
+                        <td style="text-align: left; font-size: 1.2em;"><?php echo $row['callsign']; ?></td>
+                        <th scope="row"  style="text-align: right; font-size: 1em;" >Size</td>
+                        <td style="text-align: left; font-size: 1.2em;"><?php echo $row['size']; ?></td>
+                      </tr>
+                       
+                      <tr>
+                        <th scope="row"  style="text-align: right; font-size: 1em;" >Draught</th>
+                        <td style="text-align: left; font-size: 1.2em;"><?php echo $row['draught']; ?></td>
+                        <th scope="row"  style="text-align: right; font-size: 1em;" >Year</td>
+                        <td style="text-align: left; font-size: 1.2em;"><?php echo $row['year']; ?></td>
+                      </tr>
+                       
+                                            
+                       
+                       
+                   </tbody>
 
-			<div class="card-body">	
-				<p class="card-text"><span class="text-muted"><small>IMO: </small> </span>
-			<strong><?php echo $row['imo']; ?></strong></p>
-			</div> 
-			<div class="card-body">	
-				<p class="card-text"><span class="text-muted"><small>MMSI: </small> </span>
-			<strong><?php echo $row['mmsi']; ?></strong></p>
-			</div> 
-			<div class="card-body">	
-				<p class="card-text"><span class="text-muted"><small>Call Sign: </small> </span>
-			<strong><?php echo $row['callsign']; ?></strong></p>
-			</div> 
-			<div class="card-body">	
-				<p class="card-text"><span class="text-muted"><small>Size: </small> </span>
-			<strong><?php echo $row['size']; ?></strong></p>
-			</div> 
-			<div class="card-body">	
-				<p class="card-text"><span class="text-muted"><small> Draught: </small> </span>
-			<strong><?php echo $row['draught']; ?></strong></p>
-			</div> 
-			
-
-
-
-
-
+                    <thead>
+                      <tr>
+                        <th scope="col" colspan="4" style="text-align:center; font-size: 1.5em;" ><small>TypeShip:</small> <?php echo $row['typeship']; ?></th>
+                    
+                      </tr>
+                    </thead>
+                      <thead>
+                      <tr>
+                        <th scope="col" colspan="4" style="text-align:center; font-size: 1.5em;" ><small> Maker:</small> <?php echo $row['maker']; ?></th>
+                     
+                      </tr>
+                    </thead>
+                  </table>
+	
 		</div>
 			</br>  
+
+
 			<?php }  ?>
 			</br>
 
@@ -126,7 +150,7 @@
 	</div><!-- Container -->
 
 	</br>	</br> 
- 
+	<?php }  ?>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -142,5 +166,5 @@
 	
 
 </body>
-<?php }  ?>
+
 </html>		
