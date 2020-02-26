@@ -40,7 +40,7 @@
 		</br> 
   
 		<button class="btn btn-info my-2 my-sm-0 mb-3 "title="Return" onclick = "window.location.href='welcomeShips.php'">  Return </button>
-		<button class="btn btn-danger my-2 my-sm-0 mb-3 "title="Return" onclick = "window.location.href='welcomeShips.php'">  Modif </button>
+	 	 
 		</br></br>
 		<div class="shadow p-3 mb-5 bg-white rounded">		
 			<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">

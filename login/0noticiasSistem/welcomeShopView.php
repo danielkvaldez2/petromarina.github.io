@@ -40,7 +40,6 @@
 		</br> 
   
 		<button class="btn btn-info my-2 my-sm-0 mb-3 "title="Return" onclick = "window.location.href='welcomeShop.php'">  Return </button>
-		<button class="btn btn-danger my-2 my-sm-0 mb-3 "title="Return" onclick = "window.location.href='welcomeShop.php'">  Modif </button>
 	 	 
 		</br></br>
 		<div class="shadow p-3 mb-5 bg-white rounded">		
@@ -77,7 +76,7 @@
 
 			<div class="shadow p-3 mb-5 bg-white rounded">
 				<div class="card-body">
-					<img  height="300" src="../../library/public/img/productos/<?php echo $row['strProdImagen']; ?>">
+					<img  width="340" src="../../library/public/img/productos/<?php echo $row['strProdImagen']; ?>">
 				</div>
 			</div>
 			<div class="card-body">

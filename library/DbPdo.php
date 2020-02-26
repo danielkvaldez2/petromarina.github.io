@@ -2,11 +2,12 @@
 error_reporting(0);
 class DbPdo { 
 	private $_dbh;
-  /*private $_username = "petromar_supply"; 
-  private $_passwd = "1205diego";  */
-  private $_username = "root";
-	private $_passwd = "";
+       /*private $_username = "petromar_supply"; 
+       private $_passwd = "1205diego";  */
 	private $_dns = "mysql:host=localhost;dbname=petromar_supply";
+	private $_username = "root";
+	private $_passwd = "";
+	
 	private static $_instance = null;
 	 
 	public static function getInstance(){ 

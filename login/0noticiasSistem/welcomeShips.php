@@ -12,7 +12,7 @@
 
 	  $idUsuario = $_SESSION["id_usuario"];
 
-	  $sql = "SELECT id, nombre FROM usuarios WHERE id = '$idUsuario'";
+	  $sql = "SELECT * FROM usuarios WHERE id = '$idUsuario'";
 	  $result = $mysqli->query($sql);
 	  
 	  $row = $result->fetch_assoc();
@@ -111,8 +111,8 @@
 				<th  >Country</th>
 				<th  >IMO</th>
 				<th  >MMSI</th>
-			<!--	<th  >Call Sign</th>
-				<th  >Size </th>
+			    <th  >View</th>
+			<!--		<th  >Size </th>
 				<th  >Draught</th>
 				<th  >year</th> -->
 				<th  >Type Ship</th>
@@ -122,9 +122,9 @@
 			</tr>
         </thead>
         <tbody>
-           
-		<?php while($row = $resultado4->fetch_array(MYSQLI_ASSOC)){ ?>
-			
+		 
+		<?php   while($row = $resultado4->fetch_array(MYSQLI_ASSOC)){ ?>
+			 
 			<tr>
 				<td class="text-center"><img  height="60px" src="../../img/dataBaseShip/<?php echo $row['imagen']; ?>"></td>	
 				<td class="text-center" > <?php echo $row['name']; ?> </td>
@@ -132,8 +132,8 @@
 				<td class="text-left"><?php echo $row['country']; ?></td>
 				<td class="text-left"><?php echo $row['imo']; ?></td>
 				<td class="text-left"><?php echo $row['mmsi']; ?></td>
-			<!--	<td class="text-left"><?php //echo $row['callsign']; ?></td>
-				<td class="text-left"><?php //echo $row['size']; ?></td>
+                <td class="text-left"><a href="welcomeShipsView.php?id=<?php echo $row['id']; ?>" title="View" class="btn btn-info">View </a></td>
+				<!--	<td class="text-left"><?php //echo $row['size']; ?></td>
 				<td class="text-left"><?php // echo $row['draught']; ?></td>
 				<td class="text-left"><?php //echo $row['year']; ?></td> -->
 				<td class="text-left"><?php echo $row['typeship']; ?></td>
@@ -147,7 +147,7 @@ style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke
 style=" fill:#000000;"><g transform="translate(25.8,25.8) scale(0.7,0.7)"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#e74c3c"><path d="M144.48,17.2h-34.4v-6.88c0,-5.68406 -4.63594,-10.32 -10.32,-10.32h-27.52c-5.68406,0 -10.32,4.63594 -10.32,10.32v6.88h-34.4c-1.89469,0 -3.44,1.54531 -3.44,3.44c0,1.89469 1.54531,3.44 3.44,3.44h3.73563l12.41625,139.37375c0.43,4.78375 4.50156,8.54625 9.27187,8.54625h66.09906c4.77031,0 8.84187,-3.7625 9.27187,-8.54625l12.42969,-139.37375h3.73562c1.90813,0 3.44,-1.54531 3.44,-3.44c0,-1.89469 -1.53187,-3.44 -3.44,-3.44zM68.8,151.36c0,1.90813 -1.54531,3.44 -3.44,3.44c-1.89469,0 -3.44,-1.53187 -3.44,-3.44v-113.52c0,-1.89469 1.54531,-3.44 3.44,-3.44c1.89469,0 3.44,1.54531 3.44,3.44zM68.8,10.32c0,-1.89469 1.54531,-3.44 3.44,-3.44h27.52c1.89469,0 3.44,1.54531 3.44,3.44v6.88h-34.4zM89.44,151.36c0,1.90813 -1.54531,3.44 -3.44,3.44c-1.89469,0 -3.44,-1.53187 -3.44,-3.44v-113.52c0,-1.89469 1.54531,-3.44 3.44,-3.44c1.89469,0 3.44,1.54531 3.44,3.44zM110.08,151.36c0,1.90813 -1.53187,3.44 -3.44,3.44c-1.90812,0 -3.44,-1.53187 -3.44,-3.44v-113.52c0,-1.89469 1.53188,-3.44 3.44,-3.44c1.90813,0 3.44,1.54531 3.44,3.44z"></path></g></g></g></svg>
 							</a></td> 
 			</tr>
-		<?php  }  ?>
+		<?php   }  ?>
 			 
         </tbody>
         <tfoot>
@@ -158,8 +158,8 @@ style=" fill:#000000;"><g transform="translate(25.8,25.8) scale(0.7,0.7)"><g fil
 				<th  >Country</th>
 				<th  >IMO</th>
 				<th  >MMSI</th>
-			<!--	<th  >Call Sign</th>
-				<th  >Size </th>
+				<th  >View</th>
+			<!--	<th  >Size </th>
 				<th  >Draught</th>
 				<th  >Year</th> -->
 				<th  >Type Ship</th>

@@ -126,7 +126,7 @@
 				<td class="text-left"><?php echo $row['strProdNombProducto']; ?></td>
 				<td class="text-left"><?php echo $row['strProdDescripcion']; ?></td>
 				<td>
-					<a href="#.php?recordid=<?php echo $row['id_producto']; ?>"   title = "<?php echo $row['strProdNombProducto']; ?>" class="btn btn-info">View</a>
+					<a href="welcomeShopView.php?id=<?php echo $row['id_producto']; ?>"   title = "<?php echo $row['strProdNombProducto']; ?>" class="btn btn-info">View</a>
 				</td>
 
 				<td class="text-right" ><?php echo $row['floatProdPrecio']; ?></td>

@@ -76,7 +76,7 @@
 
   </br></br></br>
 
-  <section id='databaseShips'>
+  <section id='databaseShips'> 
     <!-- databaseShips -->
 
 <?php
