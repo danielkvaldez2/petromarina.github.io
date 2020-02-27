@@ -40,6 +40,7 @@
 		</br> 
   
 		<button class="btn btn-info my-2 my-sm-0 mb-3 "title="Return" onclick = "window.location.href='welcomePorts.php'">  Return </button>
+		<button class="btn btn-danger my-2 my-sm-0 mb-3 "title="Modif" onclick = "window.location.href='welcomePorts.php'">  Modif </button>
 	 	 
 		</br></br>
 		<div class="shadow p-3 mb-5 bg-white rounded">		
@@ -70,78 +71,122 @@
 <?php if($_SESSION['tipo_usuario']==1) { ?>
 		</br></br>
 
+		<form class="form-horizontal" method="POST" action="updatePorts.php" enctype="multipart/form-data" autocomplete="off">
 
 		<div class="shadow p-3 mb-5 bg-white rounded">
 		<?php while($row = $resultado3->fetch_array(MYSQLI_ASSOC)) { ?>
-		
-			<div class="card-body">
-				<h5 class="card-title">Port of <?php echo $row['name']; ?></h5>
-				<p class="card-text"><?php echo $row['direccion']; ?></p>
-			</div> 
-
+			<div class="form-group row bg-light">
+				<label for="name" class="col-sm-2 col-form-label">Name:</label>
+				<div class="col-sm-10">
+				<input type="text" class="form-control-plaintext" id="name" name="name" placeholder="name" value="<?php echo $row['name']; ?>" readonly>
+				</div>
+            </div>
+			<div class="form-group row">		
+				<label for="direccion" class="col-sm-2 col-form-label">Address:</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="direccion" name="direccion" placeholder="direccion" value="<?php echo $row['direccion']; ?>" >
+				</div>
+			</div>
 			<div class="shadow p-3 mb-5 bg-white rounded">
 			<div class="card" >
-			<img src="../../img/ports/<?php echo $row['imagen']; ?>" class="card-img-top" height="300" width ="400" alt="<?php echo $row['name']; ?>">
-            </div> 
+				<img src="../../img/ports/<?php echo $row['imagen']; ?>" class="card-img-top" height="300" width ="400" alt="<?php echo $row['name']; ?>">
+				</div> 
 			</div> 
-			<div class="card-body">	
-				<p class="card-text"><span class="text-muted"><small>Port Authority</small> </span></p>
-				<p class="card-text"><?php echo $row['portAuthority']; ?></strong></p>
-			</div> 
-			
-			<span><img width="60px" height="40px" src="../../img/dataBaseShip/flags/<?php echo $row['flag']; ?>"> - <?php echo $row['country']; ?></span>
+			<div class="form-group row">
+			   <div class="form-group col-md-6"  >
+					<label for="portAuthority" class="col-sm-2 col-form-label"><span class="text-muted"><small>Port_Authority:</small> </span></label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="portAuthority" name="portAuthority" placeholder="portAuthority" value="<?php echo $row['portAuthority']; ?>" >
+					</div>
+				</div>
+				<div class="form-group col-md-6 "  >
+					<span><img width="120px" height="90px" src="../../img/dataBaseShip/flags/<?php echo $row['flag']; ?>"> - <?php echo $row['country']; ?></span>
+				</div>
+			</div>
 
-			<ul class="list-group list-group-flush">
-		    	<li class="list-group-item"><span class="text-secondary"><small>Phone:</small></span> 
-				<strong><?php echo $row['phone']; ?> </strong>
-				</li>
-				<li class="list-group-item"><span class="text-secondary"><small>Fax:</small></span> 
-				<strong><?php echo $row['phoneFax']; ?> </strong>
-				</li>
-				<li class="list-group-item"><span class="text-secondary"><small>Email:</small></span> 
-				<strong><?php echo $row['email']; ?></strong>
-				</li>
-				<li class="list-group-item"><span class="text-secondary"><small>Web Site:</small></span> 
-				<strong><?php echo $row['website']; ?></strong>
-				</li>
-				<li class="list-group-item"><span class="text-secondary"><small>Code:</small></span> 
-				<strong><?php echo $row['locode']; ?></strong>
-				</li>
-				<li class="list-group-item"><span class="text-secondary"><small>Opening:</small></span> 
-				<strong><?php echo $row['opening']; ?></strong>
-				</li>
-				<li class="list-group-item"><span class="text-secondary"><small>Latitud:</small></span> 
-				<strong><?php echo $row['coordenadasS']; ?></strong>
-				</li>
-				<li class="list-group-item"><span class="text-secondary"><small>Port Type:</small></span> 
-				<strong><?php echo $row['portType']; ?></strong>
-				</li>
-				<li class="list-group-item"><span class="text-secondary"><small>Port Size:</small></span> 
-				<strong><?php echo $row['portSize']; ?></strong>
-				</li>
-				<li class="list-group-item"><span class="text-secondary"><small>Surface:</small></span> 
-				<strong><?php echo $row['surface']; ?></strong>
-				</li>
-				<li class="list-group-item"><span class="text-secondary"><small>Depth:</small></span> 
-				<strong><?php echo $row['depth']; ?></strong>
-				</li>
-				<li class="list-group-item"><span class="text-secondary"><small>Docks:</small></span> 
-				<strong><?php echo $row['docks']; ?></strong>
-				</li>
-				<li class="list-group-item"><span class="text-secondary"><small>Annual Containers:</small></span> 
-				<strong><?php echo $row['annualcontainers']; ?></strong>
-				</li>
-				<li class="list-group-item"><span class="text-secondary"><small>Annual Tonel:</small></span> 
-				<strong><?php echo $row['annualtonel']; ?></strong>
-				</li>
-				<li class="list-group-item"><span class="text-secondary"><small>Annual Ships:</small></span> 
-				<strong><?php echo $row['annualships']; ?></strong>
-				</li>
+			<div class="form-group row bg-light ">
+			    <div class="form-group col-md-3 ">
+				    <label for="phone">Phone</label>
+					<input type="text" class="form-control" id="phone" name="phone" placeholder="phone" value="<?php echo $row['phone']; ?>" >
+				</div>
+				<div class="form-group col-md-3 ">
+				    <label for="phone">Phone Fax</label>
+					<input type="text" class="form-control" id="phoneFax" name="phoneFax" placeholder="phoneFax" value="<?php echo $row['phoneFax']; ?>" >
+				</div>
+				<div class="form-group col-md-3">
+				    <label for="phone">Eamil</label>
+					<input type="text" class="form-control" id="email" name="email" placeholder="email" value="<?php echo $row['email']; ?>" >
+				</div>
+				<div class="form-group col-md-3 ">
+				    <label for="phone">Web Site</label>
+					<input type="text" class="form-control" id="website" name="website" placeholder="website" value="<?php echo $row['website']; ?>" >
+				</div>
+			</div>
+
+			<div class="form-group row">
+			    <div class="form-group col-md-3 ">
+			     	<label for="phone">Code</label>
+					<input type="text" class="form-control" id="locode" name="locode" placeholder="locode" value="<?php echo $row['locode']; ?>" >
+				</div>
+			    <div class="form-group col-md-3 ">
+				<label for="phone">Latitud</label>
+						<input type="text" class="form-control" id="coordenadasS" name="coordenadasS" placeholder="coordenadasS" value="<?php echo $row['coordenadasS']; ?>" >
+				</div>
+				<div class="form-group col-md-3 ">
+			     	<label for="phone">Longitud</label>
+					<input type="text" class="form-control" id="coordenadasW" name="coordenadasW" placeholder="coordenadasW" value="<?php echo $row['coordenadasW']; ?>" >
+				</div>
 				
-			
-			</ul>
+				<div class="form-group col-md-3 ">
+			     	<label for="phone">Opening</label>
+					<input type="text" class="form-control" id="opening" name="opening" placeholder="opening" value="<?php echo $row['opening']; ?>" >
+				</div>
+			</div>
+
+
+			<div class="form-group row bg-light">			 
+			    <div class="form-group col-md-3 ">
+				<label for="phone">Port Type</label>
+						<input type="text" class="form-control" id="portType" name="portType" placeholder="portType" value="<?php echo $row['portType']; ?>" >
+				</div>
+				<div class="form-group col-md-3 ">
+			     	<label for="phone">Port Size</label>
+					<input type="text" class="form-control" id="portSize" name="portSize" placeholder="portSize" value="<?php echo $row['portSize']; ?>" >
+				</div>
+				<div class="form-group col-md-3 ">
+			     	<label for="phone">Surface</label>
+					<input type="text" class="form-control" id="surface" name="surface" placeholder="surface" value="<?php echo $row['surface']; ?>" >
+				</div>
+				<div class="form-group col-md-3 ">
+			     	<label for="phone">Depth</label>
+					<input type="text" class="form-control" id="depth" name="depth" placeholder="depth" value="<?php echo $row['depth']; ?>" >
+				</div>
+			</div>
+
+
+			<div class="form-group row">			 
+			    <div class="form-group col-md-3 ">
+				<label for="phone">Docks </label>
+						<input type="text" class="form-control" id="docks" name="docks" placeholder="docks" value="<?php echo $row['docks']; ?>" >
+				</div>
+				<div class="form-group col-md-3 ">
+			     	<label for="phone">Annual Containers </label>
+					<input type="text" class="form-control" id="annualcontainers" name="annualcontainers" placeholder="annualcontainers" value="<?php echo $row['annualcontainers']; ?>" >
+				</div>
+				<div class="form-group col-md-3 ">
+			     	<label for="phone">Annual Tonel</label>
+					<input type="text" class="form-control" id="annualtonel" name="annualtonel" placeholder="annualtonel" value="<?php echo $row['annualtonel']; ?>" >
+				</div>
+				<div class="form-group col-md-3 ">
+			     	<label for="phone" >Annual Ships</label>
+					<input type="text" class="form-control " id="annualships" name="annualships" placeholder="annualships" value="<?php echo $row['annualships']; ?>" >
+				</div>
+			</div>
+
+
+			</br> 
+		</form> 
 		</div>
-			</br>  
 			<?php }  ?>
 			</br>
 
