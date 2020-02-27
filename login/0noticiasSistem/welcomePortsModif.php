@@ -94,7 +94,7 @@
 			</div> 
 			<div class="form-group row">
 			   <div class="form-group col-md-6"  >
-					<label for="portAuthority" class="col-sm-2 col-form-label"><span class="text-muted"><small>Port_Authority:</small> </span></label>
+			        <label for="portAuthority">Port_Authority</label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" id="portAuthority" name="portAuthority" placeholder="portAuthority" value="<?php echo $row['portAuthority']; ?>" >
 					</div>
@@ -182,14 +182,27 @@
 					<input type="text" class="form-control " id="annualships" name="annualships" placeholder="annualships" value="<?php echo $row['annualships']; ?>" >
 				</div>
 			</div>
-
-
+			<div class="form-group">
+				<div class="form-check">
+				<input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+				<label class="form-check-label" for="invalidCheck3">
+				    Modifications by the user.
+				</label>
+				<div class="invalid-feedback">
+					You must agree before submitting.
+				</div>
+				</div>
+			</div>
+			<div class="form-group row ">	
+			<button type="submit" class="btn btn-danger m-auto" title="Modif" >Modif</button>	
+			</div>
 			</br> 
 		</form> 
 		</div>
 			<?php }  ?>
 			</br>
-
+	
+	   
 		    	 
 			</br>	  
 
