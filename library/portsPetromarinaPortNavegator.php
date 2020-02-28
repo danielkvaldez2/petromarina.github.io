@@ -4,7 +4,7 @@
      require_once "UploadClass.php";
                
                $obj_prod4 = new UploadClass(); 
-               $row = $obj_prod4->dataBaseports01(); 
+               $row = $obj_prod4->dataBaseports01();  
 ?>
  
 <div class="searchPortsItems1">
@@ -18,7 +18,7 @@
                                   
                                       <ul id="uno" class="oculta"> 
                       <?php         
-                                  for ($i=0; $i < count($row); $i++){ if ($row[$i]['id_continent'] == 1) {        
+                                  for ($i=0; $i < count($row); $i++){ if ($row[$i]['id_continent'] == 1 &&  $row['valido'] <> "NO") {        
                       ?>
                                         <li>
                                                     <a href="#" onclick="portViews('<?php echo $row[$i]['coordenadasS']; ?>','<?php echo $row[$i]['coordenadasW']; ?>','<?php echo $row[$i]['name']; ?>','<?php echo $row[$i]['country']; ?>','<?php echo $row[$i]['video']; ?>','<?php echo $row[$i]['id']; ?>')">
@@ -40,7 +40,7 @@
                                           
                                               <ul id="dos" class="oculta">
                       <?php         
-                                  for ($i=0; $i < count($row); $i++){ if ($row[$i]['id_continent'] == 2) {        
+                                  for ($i=0; $i < count($row); $i++){ if ($row[$i]['id_continent'] == 2 &&  $row['valido'] <> "NO") {          
                       ?>
                                         <li>
                                                     <a href="#" onclick="portViews('<?php echo $row[$i]['coordenadasS']; ?>','<?php echo $row[$i]['coordenadasW']; ?>','<?php echo $row[$i]['name']; ?>','<?php echo $row[$i]['country']; ?>','<?php echo $row[$i]['video']; ?>','<?php echo $row[$i]['id']; ?>')">
@@ -61,7 +61,7 @@
                                           
                                               <ul id="tres" class="oculta">
                       <?php         
-                                  for ($i=0; $i < count($row); $i++){ if ($row[$i]['id_continent'] == 3) {        
+                                  for ($i=0; $i < count($row); $i++){ if ($row[$i]['id_continent'] == 3 &&  $row['valido'] <> "NO") {        
                       ?>
                                         <li>
                                                     <a href="#" onclick="portViews('<?php echo $row[$i]['coordenadasS']; ?>','<?php echo $row[$i]['coordenadasW']; ?>','<?php echo $row[$i]['name']; ?>','<?php echo $row[$i]['country']; ?>','<?php echo $row[$i]['video']; ?>','<?php echo $row[$i]['id']; ?>')">
@@ -81,7 +81,7 @@
                                           
                                               <ul id="cuatro" class="oculta">
                       <?php         
-                                  for ($i=0; $i < count($row); $i++){ if ($row[$i]['id_continent'] == 4) {        
+                                  for ($i=0; $i < count($row); $i++){ if ($row[$i]['id_continent'] == 4 &&  $row['valido'] <> "NO") {          
                       ?>
                                         <li>
                                                     <a href="#" onclick="portViews('<?php echo $row[$i]['coordenadasS']; ?>','<?php echo $row[$i]['coordenadasW']; ?>','<?php echo $row[$i]['name']; ?>','<?php echo $row[$i]['country']; ?>','<?php echo $row[$i]['video']; ?>','<?php echo $row[$i]['id']; ?>')">
@@ -102,7 +102,7 @@
                                               <ul id="cinco" class="oculta">
                                                 <li>
                       <?php         
-                                  for ($i=0; $i < count($row); $i++){ if ($row[$i]['id_continent'] == 5) {        
+                                  for ($i=0; $i < count($row); $i++){ if ($row[$i]['id_continent'] == 5 &&  $row['valido'] <> "NO") {         
                       ?>
                                         <li>
                                                     <a href="#" onclick="portViews('<?php echo $row[$i]['coordenadasS']; ?>','<?php echo $row[$i]['coordenadasW']; ?>','<?php echo $row[$i]['name']; ?>','<?php echo $row[$i]['country']; ?>','<?php echo $row[$i]['video']; ?>','<?php echo $row[$i]['id']; ?>')">
