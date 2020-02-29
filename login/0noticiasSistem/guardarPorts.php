@@ -39,11 +39,11 @@
 
 
  
-  $sql = "INSERT INTO `databaseports`(`id`, `id_continent`, `name`, `country`, `flag`, `locode`, `imagen`, `video`, `videoYTube`, `opening`, `coordenadasS`, `coordenadasW`, `portAuthority`, `direccion`, `phone`, `phoneFax`, `email`, `website`, `portType`, `portSize`, `surface`, `depth`, `docks`, `annualcontainers`, `annualtonel`, `annualships`, `userAlta`, `userModif`, `valido`) VALUES ( '$id_continent', '$nameA', '$country','$flag', '$locode', '$imagen', '$video', '$videoYTube', '$opening', '$coordenadasS', '$coordenadasW', '$portAuthority', '$direccion','$phone','$phoneFax', '$email', '$website', '$portType', '$portSize', '$surface', '$depth', '$docks', '$annualcontainers','$annualtonel', '$annualships','$userAlta', '$userModif', '$valido')";
+  $sql = "INSERT INTO databaseports (id_continent, name, country, flag, locode, imagen, video, videoYTube, opening, coordenadasS, coordenadasW, portAuthority, direccion, phone, phoneFax, email, website, portType, portSize,surface, depth, docks, annualcontainers, annualtonel, annualships, userAlta, userModif, valido) VALUES ( '$id_continent', '$nameA', '$country','$flag', '$locode', '$imagen', '$video', '$videoYTube', '$opening', '$coordenadasS', '$coordenadasW', '$portAuthority', '$direccion','$phone','$phoneFax', '$email', '$website', '$portType', '$portSize', '$surface', '$depth', '$docks', '$annualcontainers','$annualtonel', '$annualships','$userAlta', '$userModif', '$valido')";
 
 $resultado = $mysqli->query($sql);
 //var_dump($resultado);
-$id_insert = $mysqli->insert_id;
+//$id_insert = $mysqli->insert_id;
 //echo $id_insert;
 
  
@@ -88,7 +88,7 @@ $id_insert = $mysqli->insert_id;
 	
 ?>
 
-<html lang="es">
+
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
        	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -115,4 +115,4 @@ $id_insert = $mysqli->insert_id;
 			</div>
 		</div>
 	</body>
-</html>
+ 

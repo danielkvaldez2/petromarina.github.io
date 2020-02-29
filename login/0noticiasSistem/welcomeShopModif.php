@@ -14,7 +14,7 @@
    $sql = "SELECT id, nombre FROM usuarios WHERE id = '$idUsuario'";
    $result = $mysqli->query($sql);
    
-   $rowUser = $result->fetch_assoc();
+   $rowUser = $result->fetch_assoc(); 
 
  /* BUSCADOR */		
 			$sql = "SELECT * FROM tbl_productos WHERE id_producto = '$idR'";
@@ -80,6 +80,7 @@
 
 
 			<div class="shadow p-3 mb-5 bg-white rounded">
+			
 			<div class="card" >
 				<img src="../../library/public/img/productos/<?php echo $row['strProdImagen']; ?>" class="card-img-top" height="300" width ="400" alt="<?php echo $row['strProdNombProducto']; ?>">
 				</div> 

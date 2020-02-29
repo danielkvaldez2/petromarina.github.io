@@ -142,7 +142,7 @@
 			return 0;	
 		}		
 	}
-	
+
 function enviarEmail($email, $nombre, $asunto, $cuerpo){
 
 	require_once '../PHPMailer/PHPMailer.php';

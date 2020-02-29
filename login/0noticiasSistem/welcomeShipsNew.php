@@ -7,8 +7,7 @@
 
    require '../funcs/loginConexion.php';
    require '../funcs/loginFuncs.php';
-
-      $idR = $_GET["id"];
+ 
 	  $idUsuario = $_SESSION["id_usuario"];
 
 	  $sql = "SELECT id, nombre FROM usuarios WHERE id = '$idUsuario'";
@@ -16,10 +15,6 @@
 	  
 	  $rowUser = $result->fetch_assoc();
 
- /* BUSCADOR */		
-			$sql = "SELECT * FROM databaseship WHERE id = '$idR'";
-			$resultado8 = $mysqli->query($sql);
- /* BUSCADOR */	
  
 
 	  
@@ -67,21 +62,20 @@
 				</div>
 			</nav>
 		</div>
-<?php if($_SESSION['tipo_usuario']==1) { ?> 
+<?php if($_SESSION['tipo_usuario']==1) { ?>
 		</br></br>
 
-		<form class="form-horizontal" method="POST" action="updateShips.php" enctype="multipart/form-data" autocomplete="off">
+		<form class="form-horizontal" method="POST" action="guardarShips.php" enctype="multipart/form-data" autocomplete="off">
 
 		<div class="shadow p-3 mb-5 bg-white rounded">
-		<?php while($row = $resultado8->fetch_array(MYSQLI_ASSOC)) { ?>
-
-			<input type="hidden" value="<?php echo $row['id']; ?>" name="id" id="id" >
+	 
+ 
 
 			<div class="shadow p-3 mb-5 bg-white rounded">
 
-			<h5 class="card-title"> <?php echo $row['nameS']; ?>  </h5>
+			<h5 class="card-title"> New Ship </h5>
 				<div class="card-body">
-					<img width="330" src="../../img/dataBaseShip/<?php echo $row['imagen']; ?>">
+					<img width="330" src="../../img/dataBaseShip/901.jpg">
 				</div>
 				<div class="form-group row">
 				<label for="imagen" class="col-sm-2 col-form-label">Imagen:</label>	
@@ -99,7 +93,7 @@
 				</div>
 				<div class="form-group col-md-4 "  >
 				    <label for="name">Name Ship</label>
-					<input type="text" class="form-control" id="name" name="name" placeholder="Name"style="text-align:center; font-size: 2em;" value="<?php echo $row['nameS']; ?>" >
+					<input type="text" class="form-control" id="name" name="name" placeholder="Name"style="text-align:center; font-size: 2em;" >
 				</div>
 				<div class="form-group col-md-4 ">			     
 				</div>
@@ -108,46 +102,46 @@
 			<div class="form-group row  ">
 			    <div class="form-group col-md-3"  >
 					 
-					<img width="120px" height="80px"class="shadow p-1 mb-5 bg-white rounded" src="../../img/dataBaseShip/flags/<?php echo $row['flag']; ?>"> 
+					<img width="120px" height="80px"class="shadow p-1 mb-5 bg-white rounded" src="../../img/dataBaseShip/flags/Usa.jpg"> 
 					 
 				</div>
 				<div class="form-group col-md-3 ">
 				    <label for="flag">Flag</label>
-					<input type="text"style="text-align:center; font-size: 1.2em;"  class="form-control" id="flag" name="flag" placeholder="Flag" value="<?php echo $row['flag']; ?>" >
+					<input type="text"style="text-align:center; font-size: 1.2em;"  class="form-control" id="flag" name="flag" placeholder="Flag"  >
 				</div>
 				<div class="form-group col-md-6 ">
 				    <label for="country">Country  </label>
-					<input type="text" style="text-align:center; font-size: 1.2em;"  class="form-control" id="country" name="country" placeholder="Country" value="<?php echo $row['country']; ?>" >
+					<input type="text" style="text-align:center; font-size: 1.2em;"  class="form-control" id="country" name="country" placeholder="Country"  >
 				</div>
 			</div>
 
 			<div class="form-group row bg-light ">
 				<div class="form-group col-md-4 "  >
 				    <label for="typeship">Type Ship</label>
-					<input type="text" class="form-control" id="typeship" name="typeship" placeholder="Type Ship"style="text-align:center; font-size: 1.5em;"  value="<?php echo $row['typeship']; ?>" >
+					<input type="text" class="form-control" id="typeship" name="typeship" placeholder="Type Ship"style="text-align:center; font-size: 1.5em;"   >
 				</div>
 				<div class="form-group col-md-8 ">		
 			     	<label for="maker">Maker</label>
-					<input type="text" class="form-control" id="maker" name="maker" placeholder="Maker  "style="text-align:center; font-size: 1.5em;"  value="<?php echo $row['maker']; ?>" >	     
+					<input type="text" class="form-control" id="maker" name="maker" placeholder="Maker  "style="text-align:center; font-size: 1.5em;"   >	     
 				</div>
 			</div>
 
 			<div class="form-group row  ">
 				<div class="form-group col-md-3 ">
 				    <label for="imo">IMO</label>
-					<input type="text"style="text-align:center; font-size: 1.2em;"  class="form-control" id="imo" name="imo" placeholder="IMO" value="<?php echo $row['imo']; ?>" >
+					<input type="text"style="text-align:center; font-size: 1.2em;"  class="form-control" id="imo" name="imo" placeholder="IMO"  >
 				</div>
 				<div class="form-group col-md-3 ">
 				    <label for="mmsi">MMSI  </label>
-					<input type="text" style="text-align:center; font-size: 1.2em;"  class="form-control" id="mmsi" name="mmsi" placeholder="MMSI" value="<?php echo $row['mmsi']; ?>" >
+					<input type="text" style="text-align:center; font-size: 1.2em;"  class="form-control" id="mmsi" name="mmsi" placeholder="MMSI" >
 				</div>
 				<div class="form-group col-md-3 ">
 				    <label for="callsign"  class="col-sm-2 col-form-label">Callsign</label>
-					<input type="text"style="text-align:center; font-size: 1.2em;"  class="form-control" id="callsign" name="callsign" placeholder="Callsign" value="<?php echo $row['callsign']; ?>" >
+					<input type="text"style="text-align:center; font-size: 1.2em;"  class="form-control" id="callsign" name="callsign" placeholder="Callsign"  >
 				</div>
 				<div class="form-group col-md-3 ">
 				    <label for="size">Size  </label>
-					<input type="text" style="text-align:center; font-size: 1.2em;"  class="form-control" id="size" name="size" placeholder="Size" value="<?php echo $row['size']; ?>" >
+					<input type="text" style="text-align:center; font-size: 1.2em;"  class="form-control" id="size" name="size" placeholder="Size" >
 				</div>
 			</div>
 
@@ -157,11 +151,11 @@
 				</div>
 				<div class="form-group col-md-3 ">
 				    <label for="draught">Draught  </label>
-					<input type="text" style="text-align:center; font-size: 1.2em;"  class="form-control" id="draught" name="draught" placeholder="Draught" value="<?php echo $row['draught']; ?>" >
+					<input type="text" style="text-align:center; font-size: 1.2em;"  class="form-control" id="draught" name="draught" placeholder="Draught"  >
 				</div>
 				<div class="form-group col-md-3 ">
 				    <label for="year"  class="col-sm-2 col-form-label">Year</label>
-					<input type="text"style="text-align:center; font-size: 1.2em;"  class="form-control" id="year" name="year" placeholder="Year" value="<?php echo $row['yearS']; ?>" >
+					<input type="text"style="text-align:center; font-size: 1.2em;"  class="form-control" id="year" name="year" placeholder="Year" >
 				</div>
 				<div class="form-group col-md-3 ">
 				</div>
@@ -174,7 +168,7 @@
 				<div class="form-check">
 				<input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
 				<label class="form-check-label" for="invalidCheck3">
-				    Modifications by the <?php echo 'user '.utf8_decode($rowUser['nombre']); ?>.
+				    New Record by the <?php echo 'user '.utf8_decode($rowUser['nombre']); ?>.
 				</label>
 				<input type="hidden" value="<?php echo $rowUser['nombre']; ?>" name="userModif" id="userModif" >
 				
@@ -186,14 +180,14 @@
 			</div>
 
 			<div class="form-group row ">	
-			<button type="submit" class="btn btn-danger m-auto" title="Modif" >Modif</button>	
+			<button type="submit" class="btn btn-success m-auto" title="New Record" >New Record</button>	
 			</div>
 	
 		</div>
 			</br>  
 
 
-			<?php }  ?>
+		 
 			</br>
 
 		  </form>  	 
