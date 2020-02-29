@@ -39,7 +39,7 @@
 
 
  
-  $sql = "INSERT INTO databaseports (id_continent, name, country, flag, locode, imagen, video, videoYTube, opening, coordenadasS, coordenadasW, portAuthority, direccion, phone, phoneFax, email, website, portType, portSize, surface, depth, docks, annualcontainers, annualtonel, annualships, userAlta, userModif, valido) VALUES ( '$id_continent', '$nameA', '$country','$flag', '$locode', '$imagen', '$video', '$videoYTube', '$opening', '$coordenadasS', '$coordenadasW', '$portAuthority', '$direccion','$phone','$phoneFax', '$email', '$website', '$portType', '$portSize', '$surface', '$depth', '$docks', '$annualcontainers','$annualtonel', '$annualships','$userAlta', '$userModif', '$valido')";
+  $sql = "INSERT INTO `databaseports`(`id`, `id_continent`, `name`, `country`, `flag`, `locode`, `imagen`, `video`, `videoYTube`, `opening`, `coordenadasS`, `coordenadasW`, `portAuthority`, `direccion`, `phone`, `phoneFax`, `email`, `website`, `portType`, `portSize`, `surface`, `depth`, `docks`, `annualcontainers`, `annualtonel`, `annualships`, `userAlta`, `userModif`, `valido`) VALUES ( '$id_continent', '$nameA', '$country','$flag', '$locode', '$imagen', '$video', '$videoYTube', '$opening', '$coordenadasS', '$coordenadasW', '$portAuthority', '$direccion','$phone','$phoneFax', '$email', '$website', '$portType', '$portSize', '$surface', '$depth', '$docks', '$annualcontainers','$annualtonel', '$annualships','$userAlta', '$userModif', '$valido')";
 
 $resultado = $mysqli->query($sql);
 //var_dump($resultado);
@@ -81,7 +81,7 @@ $id_insert = $mysqli->insert_id;
 			}
 			
 			} else {
-			echo "Archivo no permitido o excede el tamaño";
+			echo "Archivo no permitido o excede el tamaño"; 
 		}
 		
 	}

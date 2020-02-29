@@ -10,7 +10,7 @@
   
  //echo $_POST['texto'];
 
-	$id = $_POST['id'];
+	$id = $_POST['id']; 
 	$dia1 = $_POST['dia'];
 	$mes1 =  $_POST['mes'] ;
 	$posted1 =  $_POST['posted'] ;

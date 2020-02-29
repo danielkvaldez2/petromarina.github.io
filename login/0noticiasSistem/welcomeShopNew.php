@@ -8,7 +8,7 @@
    require '../funcs/loginConexion.php';
    require '../funcs/loginFuncs.php';
   
-   $idR = $_GET["id"];
+ 
    $idUsuario = $_SESSION["id_usuario"];
 
    $sql = "SELECT id, nombre FROM usuarios WHERE id = '$idUsuario'";
@@ -16,10 +16,7 @@
    
    $rowUser = $result->fetch_assoc();
 
- /* BUSCADOR */		
-			$sql = "SELECT * FROM tbl_productos WHERE id_producto = '$idR'";
-			$resultado8 = $mysqli->query($sql);
- /* BUSCADOR */	
+	
  
 
 	  
@@ -40,7 +37,7 @@
 		</br> 
   
 		<button class="btn btn-info my-2 my-sm-0 mb-3 "title="Return" onclick = "window.location.href='welcomeShop.php'">  Return </button>
-		<button class="btn btn-danger my-2 my-sm-0 mb-3 "title="Return" onclick = "window.location.href='welcomeShop.php'">  Modif </button>
+		<button class="btn btn-danger my-2 my-sm-0 mb-3 "title="Return" onclick = "window.location.href='welcomeShop.php'"> New Record</button>
 	 	 
 		</br></br>
 		<div class="shadow p-3 mb-5 bg-white rounded">		
@@ -71,17 +68,15 @@
 <?php if($_SESSION['tipo_usuario']==1) { ?>
 		</br></br>
 
-	<form class="form-horizontal" method="POST" action="updateShops.php" enctype="multipart/form-data" autocomplete="off">
+	<form class="form-horizontal" method="POST" action="guardarShops.php" enctype="multipart/form-data" autocomplete="off">
 
 		<div class="shadow p-3 mb-5 bg-white rounded">
-		<?php while($row = $resultado8->fetch_array(MYSQLI_ASSOC)) { ?>
-
-			<input type="hidden" value="<?php echo $row['id_producto']; ?>" name="id" id="id" >
+		 
 
 
 			<div class="shadow p-3 mb-5 bg-white rounded">
 			<div class="card" >
-				<img src="../../library/public/img/productos/<?php echo $row['strProdImagen']; ?>" class="card-img-top" height="300" width ="400" alt="<?php echo $row['strProdNombProducto']; ?>">
+				<img src="../../library/public/img/productos/5.jpg" class="card-img-top" height="300" width ="400" alt="Imagen">
 				</div> 
 			</div> 
 			<div class="form-group row">
@@ -99,11 +94,11 @@
 			<div class="form-group row bg-light ">
 			    <div class="form-group col-md-6 ">
 				    <label for="strProdNombProducto">Name Product</label>
-					<input type="text" class="form-control" id="strProdNombProducto" name="strProdNombProducto" placeholder="Name Product" value="<?php echo $row['strProdNombProducto']; ?>" >
+					<input type="text" class="form-control" id="strProdNombProducto" name="strProdNombProducto" placeholder="Name Product"  >
 				</div>
 				<div class="form-group col-md-6 ">
 				    <label for="strProdDescripcion">Nombre Producto</label>
-					<input type="text" class="form-control" id="strProdDescripcion" name="strProdDescripcion" placeholder="Nombre Producto" value="<?php echo $row['strProdDescripcion']; ?>" >
+					<input type="text" class="form-control" id="strProdDescripcion" name="strProdDescripcion" placeholder="Nombre Producto" >
 				</div>
 				
 			</div>
@@ -111,34 +106,34 @@
 			<div class="form-group row  ">
 			    <div class="form-group col-md-4 ">
 				    <label for="floatProdPrecio">Price</label>
-					<input type="text" class="form-control" id="floatProdPrecio" name="floatProdPrecio" placeholder="Price" value="<?php echo $row['floatProdPrecio']; ?>" >
+					<input type="text" class="form-control" id="floatProdPrecio" name="floatProdPrecio" placeholder="Price"  >
 				</div>
 				<div class="form-group col-md-4 ">
 				    <label for="strProdMarca"> BrandProduct </label>
-					<input type="text" class="form-control" id="strProdMarca" name="strProdMarca" placeholder="Product Brand" value="<?php echo $row['strProdMarca']; ?>" >
+					<input type="text" class="form-control" id="strProdMarca" name="strProdMarca" placeholder="Product Brand" >
 				</div>
 				<div class="form-group col-md-4">
 				    <label for="strProdVolumen">Volumen</label>
-					<input type="text" class="form-control" id="strProdVolumen" name="strProdVolumen" placeholder="Volumen" value="<?php echo $row['strProdVolumen']; ?>" >
+					<input type="text" class="form-control" id="strProdVolumen" name="strProdVolumen" placeholder="Volumen"  >
 				</div>
 			</div>
 
 			<div class="form-group row bg-light ">
 			    <div class="form-group col-md-3 ">
 				    <label for="strProdCodigo">Codigo</label>
-					<input type="text" class="form-control" id="strProdCodigo" name="strProdCodigo" placeholder="Codigo" value="<?php echo $row['strProdCodigo']; ?>" >
+					<input type="text" class="form-control" id="strProdCodigo" name="strProdCodigo" placeholder="Codigo"  >
 				</div>
 				<div class="form-group col-md-3 ">
 				    <label for="id_categProd">Categ Prod</label>
-					<input type="text" class="form-control" id="id_categProd" name="id_categProd" placeholder="Categ Prod" value="<?php echo $row['id_categProd']; ?>" >
+					<input type="text" class="form-control" id="id_categProd" name="id_categProd" placeholder="Categ Prod"  >
 				</div>
 				<div class="form-group col-md-3">
 				    <label for="id_subcategProd">Sub Categ Prod</label>
-					<input type="text" class="form-control" id="id_subcategProd" name="id_subcategProd" placeholder="subcategProd" value="<?php echo $row['id_subcategProd']; ?>" >
+					<input type="text" class="form-control" id="id_subcategProd" name="id_subcategProd" placeholder="subcategProd" >
 				</div>
 				<div class="form-group col-md-3 ">
 				    <label for="strOferta">Oferta</label>
-					<input type="text" class="form-control" id="strOferta" name="strOferta" placeholder="Oferta" value="<?php echo $row['strOferta']; ?>" >
+					<input type="text" class="form-control" id="strOferta" name="strOferta" placeholder="Oferta">
 				</div>
 			</div>
 
@@ -150,7 +145,7 @@
 				<div class="form-check">
 				<input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
 				<label class="form-check-label" for="invalidCheck3">
-				    Modifications by the <?php echo 'user '.utf8_decode($rowUser['nombre']); ?>.
+				   New Record by the <?php echo 'user '.utf8_decode($rowUser['nombre']); ?>.
 				</label>
 				<input type="hidden" value="<?php echo $rowUser['nombre']; ?>" name="userModif" id="userModif" >
 				
@@ -162,7 +157,7 @@
 			</div>
 
 			<div class="form-group row ">	
-			<button type="submit" class="btn btn-danger m-auto" title="Modif" >Modif</button>	
+			<button type="submit" class="btn btn-danger m-auto" title="New Record" >New Record</button>	
 			</div>
 
 
@@ -174,7 +169,7 @@
 
 		</div>
 			 
-			<?php }  ?>
+		 
 			</br>
     </form>
 		    	 

@@ -35,7 +35,7 @@
 	$userModif = $mysqli->real_escape_string($_POST['userModif']); 
 	$valido = $mysqli->real_escape_string($_POST['valido']);  
 	
-	$archivo1 = $_FILES["imagen"]["name"];
+	$archivo1 = $_FILES["imagen"]["name"]; 
 	//var_dump($_POST);
 	//echo "</br></br></br></br>";
 	//var_dump($_FILES);

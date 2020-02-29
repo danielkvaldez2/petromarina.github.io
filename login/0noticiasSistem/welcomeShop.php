@@ -92,6 +92,7 @@
 		</nav>
     </div>
 
+	<button class="btn btn-success my-2 my-sm-0 mb-3 "title="New Regiter" onclick = "window.location.href='welcomeShopNew.php'">  New Regiter </button>
 
 </div><!-- Container -->
 
@@ -114,13 +115,17 @@
 				<th  >Price</th>
 				<th  >Modify</th>
 				<th  >Delete</th>
-			</tr>
+			</tr> 
         </thead>
         <tbody>
            
-		<?php while($row = $resultado9->fetch_array(MYSQLI_ASSOC)){ ?>
+		<?php while($row = $resultado9->fetch_array(MYSQLI_ASSOC)){  
 			
-			<tr>
+			if ($row['strOferta']=="1"){
+			      ?>   <tr class="bg bg-warning">
+			<?php	} else {
+				 ?>   <tr>	
+		<?php }	?>	
 				<td class="text-center"><img  height="40px" src="../../library/public/img/productos/<?php echo $row['strProdImagen']; ?>"></td>	
 				<td class="text-center" > <?php echo $row['id_categProd']; ?> </td>
 				<td class="text-left"><?php echo $row['strProdNombProducto']; ?></td>

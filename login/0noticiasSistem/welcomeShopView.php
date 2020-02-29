@@ -74,7 +74,7 @@
 		<div class="shadow p-3 mb-5 bg-white rounded">
 		<?php while($row = $resultado8->fetch_array(MYSQLI_ASSOC)) { ?>
 
-			<div class="shadow p-3 mb-5 bg-white rounded">
+			<div class="shadow p-3 mb-5 bg-white rounded"> 
 				<div class="card-body">
 					<img  width="340" src="../../library/public/img/productos/<?php echo $row['strProdImagen']; ?>">
 				</div>
