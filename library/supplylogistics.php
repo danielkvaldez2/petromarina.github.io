@@ -84,7 +84,7 @@
 <section class='supply'>
           <div class="searchSupply">
                 <div class='searchSupply1' >
-                      <a id='compra<?php echo $productos[$i]['id_producto']?> ' class="btn btn-warning"   title='Carrito' href='prosesos'>
+                      <a id='compra<?php echo $productos[$i]['id_producto']?> ' class="btn btn-primary"   title='Carrito' href='prosesos'>
                               <span class="add2cart"><i class="fa fa-shopping-cart"></i></span> 
                       </a> 
 
@@ -121,8 +121,8 @@
                                        
                     <!-- Parametro q-->	
 
-
-
+    <div class="productContainer">
+        <div class="productFlag bg-<?php echo $productos[$i]['id_categProd'] ?>"">. </div>
             <div class="product " id="<?php echo $productos[$i]['id_producto']?>" pesable="false">
                   
                   <br>
@@ -144,12 +144,14 @@
                     <!--fin cucarda-->	
                   </div>
 
-<div class="colorShop bg-<?php echo $productos[$i]['id_categProd'] ?>">
+
               
                   <div class="item-promo">
                         <?php if ($productos[$i]['strOferta']==1){  echo "O F E R T A";} else {echo "";} ;  ?>
                   </div>	
-                  
+    <div class="colorShop1 bg-<?php   echo $productos[$i]['id_categProd'] ?>"">.</div>
+    <div class="colorShop2">.</div>
+   <div class="colorShop bg-<?php   echo $productos[$i]['id_categProd'] ?>">       
 
                   <div class="precio-unidad">
                     <span class="precio-referencia">	$	</span>	
@@ -161,7 +163,7 @@
                   </div>
                     
               
-                  <div class="description1 limitRow tooltipHere " title="" data-toggle="tooltip" data-original-title=" <?php echo trabajo::corta_palabra($productos[$i]['strProdDescripcion'],40); ?>">
+                  <div class="description1 limitRow tooltipHere precio-referencia " title="" data-toggle="tooltip" data-original-title=" <?php echo trabajo::corta_palabra($productos[$i]['strProdDescripcion'],40); ?>">
                     <?php echo trabajo::corta_palabra($productos[$i]['strProdDescripcion'],40); ?>
                   </div>
 
@@ -170,16 +172,14 @@
                       $ 	<?php echo $productos[$i]['floatProdPrecio'] ?> x Unidad
                   </div>	
                 
-                  <div class="action-control">
-                                                                      
-                      <a id='compra<?php echo $productos[$i]['id_producto']?> ' class="btn btn-warning btn-lg "   title='to Buy' href='prosesos?RecordId=<?php echo $productos[$i]['id_producto'] ?>&Foto=<?php echo $productos[$i]['strProdImagenThumb']?>&Titulo=<?php echo $productos[$i]['strProdNombProducto']?>&Codigo=<?php echo $productos[$i]['id_categProd'];?>-k-<?php echo $productos[$i]['id_subcategProd']?>-k-<?php echo $productos[$i]['id_producto']?>&Importe=<?php echo $productos[$i]['floatProdPrecio']?>&ProdMarca=<?php echo $productos[$i]['strProdMarca']?>&ProdVolumen=<?php echo $productos[$i]['strProdVolumen']?>&ProdDescripcion=<?php echo $productos[$i]['strProdDescripcion']?>&Cantidad=6&Oferta=<?php echo $productos[$i]['strOferta']?>'>
+                  <div class="action-control">                                              
+                      <a id='compra<?php echo $productos[$i]['id_producto']?> ' class="btn btn-primary btn-lg "   title='to Buy' href='prosesos?RecordId=<?php echo $productos[$i]['id_producto'] ?>&Foto=<?php echo $productos[$i]['strProdImagenThumb']?>&Titulo=<?php echo $productos[$i]['strProdNombProducto']?>&Codigo=<?php echo $productos[$i]['id_categProd'];?>-k-<?php echo $productos[$i]['id_subcategProd']?>-k-<?php echo $productos[$i]['id_producto']?>&Importe=<?php echo $productos[$i]['floatProdPrecio']?>&ProdMarca=<?php echo $productos[$i]['strProdMarca']?>&ProdVolumen=<?php echo $productos[$i]['strProdVolumen']?>&ProdDescripcion=<?php echo $productos[$i]['strProdDescripcion']?>&Cantidad=6&Oferta=<?php echo $productos[$i]['strOferta']?>'>
                           <span class="add2cart"><i class="fa fa-shopping-cart"></i></span> 
-                      </a>                                   
-    
+                      </a>                                  
                     </div>	
                 </div>
               </div>	
-
+              </div>
              
                                       
 

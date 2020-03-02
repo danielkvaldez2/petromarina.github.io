@@ -4,7 +4,7 @@
 
         <!-- Logo ( * your text or image into link tag *) -->
         <div class="nav-logo-wrap local-scroll">
-          <a href="#top" class="logo"><img src="images/logo-white.png" width="300" alt="" /></a>
+          <a href="#top" class="logo"><img src="images/logo-white.png" width="250" alt="" /></a>
         </div>
 
         <div class="mobile-nav"><i class="fa fa-bars"></i></div>
