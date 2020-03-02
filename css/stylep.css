@@ -1599,6 +1599,7 @@ ul#cinco {
 .image > a > img.verBien {
   min-height: 100px !important;
   max-height: 100px !important;
+  border-radius: 100px;
   object-fit: cover;
 }
 
@@ -1635,10 +1636,10 @@ ul#cinco {
 .precio-unidad {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   line-height: 21px;
-  font-size: 1em;
+  font-size: 1.3em;
   font-weight: bolder;
   text-align: center;
-  color: rgb(16, 138, 16);
+  color: whitesmoke;
   box-sizing: border-box;
 }
 
@@ -1665,8 +1666,8 @@ ul#cinco {
   text-align: center;
   font-family: Verdana;
   box-sizing: border-box;
-  font-size: 10px;
-  color: #9c9d9e;
+  font-size: 12px;
+  color: whitesmoke;
   margin-bottom: 15px;
 }
 
@@ -1698,8 +1699,99 @@ ul#cinco {
   margin: 0 auto;
 }
 
+.bg-1 {
+  background-color: crimson !important;
+}
+.bg-2 {
+  background-color: springgreen !important;
+}
+.bg-3 {
+  background-color: mediumpurple !important;
+}
+.bg-4 {
+  background-color: coral !important;
+}
+.bg-5 {
+  background-color: purple !important;
+}
+.bg-6 {
+  background-color: brown !important;
+}
+.bg-7 {
+  background-color: burlywood !important;
+}
+.bg-8 {
+  background-color: rgb(20, 100, 220) !important;
+}
+.bg-9 {
+  background-color:  rgb(20, 220, 97) !important;
+}
+.bg-10 {
+  background-color: rgb(220, 60, 20) !important;
+}
+.bg-11 {
+  background-color: rgb(44, 126, 44) !important;
+}
+.bg-12 {
+  background-color: cornflowerblue !important;
+}
+.bg-13 {
+  background-color: rgb(119, 83, 15) !important;
+}
+.bg-14 {
+  background-color: rgb(50, 67, 124) !important;
+}
+.bg-15 {
+  background-color: rgb(85, 24, 24) !important;
+ 
+}
 
-
+.qg-1 {
+ color: crimson !important;
+}
+.qg-2 {
+ color: springgreen !important;
+}
+.qg-3 {
+  color: mediumpurple !important;
+}
+.qg-4 {
+  color: coral !important;
+}
+.qg-5 {
+  color: purple !important;
+}
+.qg-6 {
+ color: brown !important;
+}
+.qg-7 {
+  color: burlywood !important;
+}
+.qg-8 {
+  color: rgb(20, 100, 220) !important;
+}
+.qg-9 {
+ color:  rgb(20, 220, 97) !important;
+}
+.qg-10 {
+color: rgb(220, 60, 20) !important;
+}
+.qg-11 {
+color: rgb(44, 126, 44) !important;
+}
+.qg-12 {
+color: cornflowerblue !important;
+}
+.qg-13 {
+  color: rgb(119, 83, 15) !important;
+}
+.qg-14 {
+  color: rgb(50, 67, 124) !important;
+}
+.qg-15 {
+ color: rgb(85, 24, 24) !important;
+ 
+}
 /* ********************************************************************** */
 
 

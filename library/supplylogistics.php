@@ -119,65 +119,66 @@
 
                             
                                        
-                                                        <!-- Parametro q-->	
+                    <!-- Parametro q-->	
 
 
 
-                                          <div class="product " id="<?php echo $productos[$i]['id_producto']?>" pesable="false">
-                                                
-                                               <br>
-                                                <div class="description limitRow tooltipHere" title="" data-toggle="tooltip" data-original-title="<?php trabajo::corta_palabra($productos[$i]['strProdNombProducto'],16); ?>">
-                                                     <?php echo trabajo::corta_palabra($productos[$i]['strProdNombProducto'],16); ?>
-                                                </div>
+            <div class="product " id="<?php echo $productos[$i]['id_producto']?>" pesable="false">
+                  
+                  <br>
+                  <div class="description limitRow tooltipHere" title="" data-toggle="tooltip" data-original-title="<?php trabajo::corta_palabra($productos[$i]['strProdNombProducto'],16); ?>">
+                        <?php echo trabajo::corta_palabra($productos[$i]['strProdNombProducto'],16); ?>
+                  </div>
 
-                                            
-                                            
-                                                <div class="image">
-                                                  <a id='verF'  href="javascript:void(0)">
-
-           
-                                                       <img  class="lazyload verBien "   data-original="http://www.petromarina.net/library/public/img/productos/<?php echo $productos[$i]['strProdImagenThumb']?>" alt='NO IMAGEN'  title='<?php echo $productos[$i]['strProdNombProducto'] ?> - <?php echo $productos[$i]['strProdDescripcion']?>' />
-                                                    
-
-                                                   
-                                                  </a>		<!--inicio cucarda-->	
-                                                  <!--fin cucarda-->	
-                                                </div>
+              
+              
+                  <div class="image">
+                    <a id='verF'  href="javascript:void(0)">
 
 
-                                            
-                                                <div class="item-promo">
-                                                      <?php if ($productos[$i]['strOferta']==1){  echo "O F E R T A";} else {echo "";} ;  ?>
-                                                </div>	
-                                                
+                          <img  class="lazyload verBien "   data-original="http://www.petromarina.net/library/public/img/productos/<?php echo $productos[$i]['strProdImagenThumb']?>" alt='NO IMAGEN'  title='<?php echo $productos[$i]['strProdNombProducto'] ?> - <?php echo $productos[$i]['strProdDescripcion']?>' />
+                      
 
-                                                <div class="precio-unidad">
-                                                  <span class="precio-referencia">	$	</span>	
-                                                  <span>		<?php echo 6*$productos[$i]['floatProdPrecio'] ?>	</span> 
-                                                  <span class="precio-referencia">	x 6 un.	</span>
-                                                  <br>	
-                                                        <p style="font-size: 10px; color: #fff; font-weight: normal; margin-bottom: 0px;">.
-                                                        </p>
-                                                </div>
-                                                  
-                                            
-                                                <div class="description1 limitRow tooltipHere" title="" data-toggle="tooltip" data-original-title=" <?php echo trabajo::corta_palabra($productos[$i]['strProdDescripcion'],40); ?>">
-                                                  <?php echo trabajo::corta_palabra($productos[$i]['strProdDescripcion'],40); ?>
-                                                </div>
+                      
+                    </a>		<!--inicio cucarda-->	
+                    <!--fin cucarda-->	
+                  </div>
+
+<div class="colorShop bg-<?php echo $productos[$i]['id_categProd'] ?>">
+              
+                  <div class="item-promo">
+                        <?php if ($productos[$i]['strOferta']==1){  echo "O F E R T A";} else {echo "";} ;  ?>
+                  </div>	
+                  
+
+                  <div class="precio-unidad">
+                    <span class="precio-referencia">	$	</span>	
+                    <span>		<?php echo 6*$productos[$i]['floatProdPrecio'] ?>	</span> 
+                    <span class="precio-referencia">	x 6 un.	</span>
+                    <br>	
+                          <p style="font-size: 10px; color: #fff; font-weight: normal; margin-bottom: 0px;">.
+                          </p>
+                  </div>
+                    
+              
+                  <div class="description1 limitRow tooltipHere " title="" data-toggle="tooltip" data-original-title=" <?php echo trabajo::corta_palabra($productos[$i]['strProdDescripcion'],40); ?>">
+                    <?php echo trabajo::corta_palabra($productos[$i]['strProdDescripcion'],40); ?>
+                  </div>
 
 
-                                                <div class="precio-referencia">
-                                                    $ 	<?php echo $productos[$i]['floatProdPrecio'] ?> x Unidad
-                                                </div>	
-                                              
-                                                <div class="action-control">
-                                                                                                    
-                                                   <a id='compra<?php echo $productos[$i]['id_producto']?> ' class="btn btn-warning btn-lg "   title='to Buy' href='prosesos?RecordId=<?php echo $productos[$i]['id_producto'] ?>&Foto=<?php echo $productos[$i]['strProdImagenThumb']?>&Titulo=<?php echo $productos[$i]['strProdNombProducto']?>&Codigo=<?php echo $productos[$i]['id_categProd'];?>-k-<?php echo $productos[$i]['id_subcategProd']?>-k-<?php echo $productos[$i]['id_producto']?>&Importe=<?php echo $productos[$i]['floatProdPrecio']?>&ProdMarca=<?php echo $productos[$i]['strProdMarca']?>&ProdVolumen=<?php echo $productos[$i]['strProdVolumen']?>&ProdDescripcion=<?php echo $productos[$i]['strProdDescripcion']?>&Cantidad=6&Oferta=<?php echo $productos[$i]['strOferta']?>'>
-                                                       <span class="add2cart"><i class="fa fa-shopping-cart"></i></span> 
-                                                    </a>                                   
-                                 
-                                                  </div>	
-                                            </div>	
+                  <div class="precio-referencia">
+                      $ 	<?php echo $productos[$i]['floatProdPrecio'] ?> x Unidad
+                  </div>	
+                
+                  <div class="action-control">
+                                                                      
+                      <a id='compra<?php echo $productos[$i]['id_producto']?> ' class="btn btn-warning btn-lg "   title='to Buy' href='prosesos?RecordId=<?php echo $productos[$i]['id_producto'] ?>&Foto=<?php echo $productos[$i]['strProdImagenThumb']?>&Titulo=<?php echo $productos[$i]['strProdNombProducto']?>&Codigo=<?php echo $productos[$i]['id_categProd'];?>-k-<?php echo $productos[$i]['id_subcategProd']?>-k-<?php echo $productos[$i]['id_producto']?>&Importe=<?php echo $productos[$i]['floatProdPrecio']?>&ProdMarca=<?php echo $productos[$i]['strProdMarca']?>&ProdVolumen=<?php echo $productos[$i]['strProdVolumen']?>&ProdDescripcion=<?php echo $productos[$i]['strProdDescripcion']?>&Cantidad=6&Oferta=<?php echo $productos[$i]['strOferta']?>'>
+                          <span class="add2cart"><i class="fa fa-shopping-cart"></i></span> 
+                      </a>                                   
+    
+                    </div>	
+                </div>
+              </div>	
 
              
                                       
@@ -200,7 +201,7 @@
                 
   
               ?>
-
+</br></br></br></br></br></br></br></br>
           </div> <!-- <div id="contenedor">-->    
          
 <!-- fin resultado de la busqueda supplylogistic --> 
