@@ -227,6 +227,25 @@ public function dataBaseShip02($id)
 	 }
 
 
+	 
+	 public function getProductos3($id)
+	 {
+		  $sql = "SELECT * FROM `tbl_productos` WHERE `id_categProd`= $id";
+		  $stm = $this->_getDbh()->prepare($sql);
+		  $stm->execute();
+		  return $stm->fetchAll(PDO::FETCH_ASSOC);
+	  }
+	 
+
+
+
+	 public function getCategoriaProd()
+	 {
+		  $sql = "SELECT * FROM tbl_cat_productos ORDER BY `id_categProd` ASC";
+		  $stm = $this->_getDbh()->prepare($sql);
+		  $stm->execute();
+		  return $stm->fetchAll(PDO::FETCH_ASSOC);
+	  }
 
 
 
@@ -287,10 +306,7 @@ public function dataBaseShip02($id)
      return $numeroventa;
      }
 
-
-
-
-     
+  
 
      public function grabaVenta($nombre,$direccion,$telefono,$horario,$correo,$ip,$lat,$long)
      {
@@ -331,8 +347,9 @@ public function dataBaseShip02($id)
 					        $StrControl="cargar";
 					      
 					   
-								 	$sql="INSERT INTO `tbl_ventas` ( `nro_venta`, `id_usuarios`, `user_nombre`, `user_direccion`, `user_telefono`, `user_horario`, `user_correo`, `prod_id`, `prod_imagen`, `prod_nombre`, `prod_codigo`, `prod_precio`, `prod_cantidad`, `prod_oferta`,`prod_marca`, `prod_volumen`,`prod_descripcion`,`user_ip`, `user_latitud`, `user_longitud`, `strFecha`, `strHora`, `strEstado`, `strControl`)"
-								        ." VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+								 	$sql="INSERT INTO tbl_ventas ( nro_venta, id_usuarios, user_nombre, user_direccion, user_telefono, user_horario, user_correo, prod_id, prod_imagen, prod_nombre, prod_codigo, prod_precio, prod_cantidad, prod_oferta,prod_marca, prod_volumen, prod_descripcion, user_ip, user_latitud, user_longitud, strFecha, strHora, strEstado, strControl)"
+									." VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+									
 					                $stm = $this->_getDbh()->prepare($sql);
 					               
 									$stm->bindParam(1,$Nro_venta);

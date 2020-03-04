@@ -8,12 +8,12 @@
 
 
 //echo "entre en FINALIZARPEDIDO.PHP1</br>";
-        // print_r($_GET);
-        // echo "<--GET</br>";
-        // print_r($_POST);
-        // echo "<--POST</br>";
-        // print_r($_SESSION);
-        // echo "<--SESSION</br>";
+         // print_r($_GET);
+         // echo "<--GET</br>";
+         // print_r($_POST);
+         // echo "<--POST</br>";
+         // print_r($_SESSION);
+         // echo "<--SESSION</br>";
 //echo "entre en FINALIZARPEDIDO.PHP2</br>";
 
 
@@ -22,11 +22,11 @@
 
            require_once "conexion.php";
 
-            $nombre= $mysqli->real_escape_string($_POST['nombreC']);                //   aca estoy
-            $direccion= $mysqli->real_escape_string($_POST['direccionC']);          //   aca estoy
-            $telefono= $mysqli->real_escape_string($_POST['telefonoC']);            //   aca estoy
-            $horario= $mysqli->real_escape_string($_POST['horarioC']);              //   aca estoy
-            $correo= $mysqli->real_escape_string($_POST['correoC']);                //   aca estoy
+          $nombre= $mysqli->real_escape_string($_POST['nombreC']);                //   aca estoy
+          $direccion= $mysqli->real_escape_string($_POST['direccionC']);          //   aca estoy
+          $telefono= $mysqli->real_escape_string($_POST['telefonoC']);            //   aca estoy
+          $horario= $mysqli->real_escape_string($_POST['horarioC']);              //   aca estoy
+          $correo= $mysqli->real_escape_string($_POST['correoC']);                //   aca estoy
 
 
 
@@ -80,6 +80,7 @@
     
 		 <link rel="stylesheet" type="text/css" href="../css/fonts.css" >
      <link rel='stylesheet' type='text/css' href='../css/style.css' /> 
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     
     </head>
       <body style="background: white;color:black;font-size: 16px;">
@@ -201,7 +202,9 @@
       
 
           <?php session_destroy(); ?>
-      <button onClick="location.href='supplylogistics'" class="btn btn-warning" title="Salir" ><span> Exit <i class="icon icon-cart"></i></span></button> 
+      <button onClick="location.href='supplylogistics'" class="btn btn-warning mb-8" title="Salir" ><span> Exit <i class="icon icon-cart"></i></span></button> 
+
+      </br>  </br>
         <?php    
    
           }

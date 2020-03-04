@@ -5865,45 +5865,9 @@ section:hover .small-item-carousel .owl-next {
 
 /**************************************css stylep.css ******************************************************/
 /**************************************css stylep.css ******************************************************/
-.tapon {
-  background: #003142;
-  /* color de la barra #f1f1f1 */
-  color: #F1F1F1;
-  /*color de las tres barritas 333*/
-  height: 45px;
-  width: 100%;
-  bottom: 0px;
-  position: fixed;
-  z-index: 101;
-  display: block;
-  padding: 10px;
-  vertical-align: middle;
-  text-align: center;
-  border-bottom: 1px solid #E9E9E9;
-  /* borde inferior de la barra*/
-  box-shadow: 1px 2px 9px #c6c6c6;
-}
 
-.taponLeft {
-  background: rgba(0, 49, 66, 0.93);
-  /* color de la barra #f1f1f1 */
-  color: #F1F1F1;
-  /*color de las tres barritas 333*/
-  height: 100%;
-  width: 45px;
-  bottom: 0px;
-  left: 0px;
-  position: fixed;
-  z-index: 101;
-  display: block;
 
-  /* border-bottom: 1px solid #E9E9E9; borde inferior de la barra*/
-  /*box-shadow: 1px 2px 9px #c6c6c6; */
-}
 
-.lefttap {
-  width: 40px;
-}
 
 /******************************************ports petromarina **************************/
 .portsPetromarinaContenedor {

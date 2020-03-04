@@ -35,94 +35,89 @@
     
     
 		 <link rel="stylesheet" type="text/css" href="../css/fonts.css" >
-		 <link rel='stylesheet' type='text/css' href='../css/style.css' /> 
+     <link rel='stylesheet' type='text/css' href='../css/style.css' /> 
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 </head>
-<body style="background: white;font-size: 14px;vertical-align:middle;">
-<div  style="width:350px;height500px;overflow:auto; text-align:center;"> 
+<body>
+<div class="container-xl"> 
 
-  <form id="form1" name="form1" method="post" action="finalizarPedido"> <!-- finalizarPedido.php -->
-  <center>
+  <form id="form1" name="form1" method="post" action="finalizarPedido.php"> <!-- finalizarPedido.php -->
+  
 
-  <table width="350" border="0" id="t01">
-<tr>
-      
+  <table class="table table-responsive  ">
+
+  <thead>
+     <tr>
       <td colspan="6" align="center" bgcolor="#FFFFFF"><strong>SHIP´S DATA</strong></td>
-      </tr>
-    <tr>
-       
-      <td colspan="6" align="center" bgcolor="#FFFFFF"></td>
-      </tr>
+    </tr>
+  </thead>
+  <tbody>
     <tr>  
-     
+      <td colspan="6" align="center" bgcolor="#FFFFFF"></td>
+    </tr>
+
+    <tr>  
       <td align="right" bgcolor="#014358" style="color:white;">	NAME:</td>
       <td colspan="5" align="center" bgcolor="#014358"><label for="nombreC"></label>
         <input name="nombreC" type="text" id="nombreC"  placeholder='write your NAME' size="33" required/></td>
-      </tr>
+    </tr>
+
     <tr>
-      
       <td align="right" bgcolor="#014358" style="color:white;">IMO:</td>
       <td colspan="5" align="center" bgcolor="#014358"><label for="direccionC"></label>
        <!-- <input name="direccionC" type="text" id="direccionC" size="55" />-->
         <input type='text'  name="direccionC" id='direccionC' placeholder='write your IMO'  size="33" required></td>
-      </tr>
+    </tr>
+
     <tr>
        
       <td align="right" bgcolor="#014358" style="color:white;">MMSI:</td>
       <td colspan="5" align="center" bgcolor="#014358"><label for="telefonoC"></label>
         <input name="telefonoC" type="text" id="telefonoC"  placeholder='write your MMSI'  size="33" required /></td>
     </tr>
+
     <tr>
-   
       <td align="right" bgcolor="#014358" style="color:white;">SHIP MANAGER:</td>
       <td colspan="5" align="center" bgcolor="#014358"><label for="horarioC"></label>
         <input name="horarioC" type="text" id="horarioC"  placeholder='write your SHIP MANAGER'  size="33" /></td>
     </tr>
-    <tr>
-      
+
+    <tr>  
       <td align="right" bgcolor="#014358" style="color:white;">E-MAIL:</td>
       <td colspan="5" align="center" bgcolor="#014358"><label for="correoC"></label>
          <!-- <input name="correoC" type="text" id="correoC" placeholder='Escribe tu Correo Electronico'  size="55" />c required  -->
         <input type='email' name="correoC" id='correo' placeholder='write your E-mail' size="33"></td>
-      </tr>
-    <tr>
-      
-      <td bgcolor="#FFFFFF">&nbsp;</td>
-      <td colspan="6" align="center" bgcolor="#FFFFFF"></td>
-      </tr>
-    <tr>
-      
-      <td bgcolor="#FFFFFF">
-            
-      </td>
-      <td colspan="2" align="center" bgcolor="#FFFFFF">
-             <button type="bottom" onClick="location.href='supplylogistics'" class="buttonx grande verdeProseso" title="Continue Shopping"><span> Continue Shopping <i class="icon icon-cart"></i></span></button>  	 
-      </td>
-      <td colspan="2" align="center" bgcolor="#FFFFFF">
-
-         			
-           <button type="submit" onclick = "subimt"  class="buttonx grande rojo" title="Confirm"><span>CONFIRM<i class="icon icon-ticket "></i></span></button>
-      </td>
-      </tr>
-      <tr>
-       
-      <td bgcolor="#FFFFFF">&nbsp;</td>
-      <td colspan="4" align="center" bgcolor="#FFFFFF"></td>
-      </tr>
-
-    <tr>
-    
-      <td colspan="6" align="center" bgcolor="#FFFFFF">
-    
-    
-    
     </tr>
 
+    <tr>  
+      <td bgcolor="#FFFFFF">&nbsp;</td>
+      <td colspan="6" align="center" bgcolor="#FFFFFF"></td>
+    </tr>
+
+    <tr>  
+      <td bgcolor="#FFFFFF"> </td>
+      <td colspan="2" align="center" bgcolor="#FFFFFF">
+             <button type="bottom" onClick="location.href='supplylogistics'" class="btn btn-danger" title="Continue Shopping"><span> Continue Shopping <i class="icon icon-cart"></i></span></button>  	 
+      </td>
+      <td colspan="2" align="center" bgcolor="#FFFFFF"> 			
+           <button type="submit" onclick = "subimt"  class="btn btn-info" title="Confirm"><span>CONFIRM<i class="icon icon-ticket "></i></span></button>
+      </td>
+    </tr>
+
+    <tr>  
+      <td bgcolor="#FFFFFF">&nbsp;</td>
+      <td colspan="4" align="center" bgcolor="#FFFFFF"></td>
+    </tr>
 
     <tr>
-      
+      <td colspan="6" align="center" bgcolor="#FFFFFF">
+    </tr>
+
+    <tr>  
       <td colspan="6" align="center" bgcolor="#014358" style="color:white;">Purchase Information</td>
-      </tr>
+    </tr>
+
     <tr>
       <td width="35" align="center" bgcolor="#014358" style="color:white;">Image</td>
       <td width="40" align="center" bgcolor="#014358" style="color:white;">Product</td>
@@ -130,6 +125,8 @@
       <td width="20" align="center" bgcolor="#014358" style="color:white;">Quantity</td>
       <td colspan="2" align="center" bgcolor="#014358" style="color:white;">Sub-Total</td>
     </tr>
+
+  
   <?php 
   
 
@@ -142,8 +139,8 @@
   		      if($mi_carrito[$i]<> NULL){		
   ?> 
 
-    <tr class="fondorenglon1"> 
-      <td align="center"><img src="<?php echo 'public/img/productos/'.$mi_carrito[$i]['imagen']; ?> " width="50" height="50" align="right" /></td>
+    <tr  > 
+         <td align="center"><img src="<?php echo 'public/img/productos/'.$mi_carrito[$i]['imagen']; ?> " width="50" height="50" align="right" /></td>
           <td class="prosesosTxt">                 <?php echo $mi_carrito[$i]['nombre']; ?>      </td>
           <td align="center"class="prosesosTxt">   <?php echo $mi_carrito[$i]['precio']; ?>      </td>
           <td align="center"class="prosesosTxt">   <?php echo $mi_carrito[$i]['cantidad']; ?>   </td> 
@@ -174,9 +171,9 @@
       <td align="right" bgcolor="#FFFFFF"><img src="public/iconos/chequear.png" width="20" height="20" /></td>
     </tr>
 
-
+    </tbody>
   </table>
-  </center>
+  
   </form>
 </div>
  

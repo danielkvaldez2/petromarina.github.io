@@ -29,7 +29,8 @@
     
 		 <link rel="stylesheet" type="text/css" href="../css/fonts.css" />
      <link rel="stylesheet" type="text/css" href="../css/style.css" /> 
-     <link rel="stylesheet" type="text/css" href="../css/stylep.css" />
+	 <link rel="stylesheet" type="text/css" href="../css/stylep.css" />
+	 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body style="background: white;">
 <div  style="background: #014358;width:100%;height:100%;overflow:auto;text-align:center;">
@@ -56,7 +57,7 @@ if (isset($_GET['RecordId']) ) {
 			$cantidad=$_GET['Cantidad'];
 			$intoferta = $_GET['Oferta'];
 			$mi_carrito[]=array('id'=>$idProducto,'imagen'=>$strImagen,'nombre'=>$strTitulo,'codigo'=>$strCodigoProducto,'precio'=>$intPrecio, 'marca'=>$strMarca,  'volumen'=>$strVolumen,  'descripcion'=>$strDescripcion,'cantidad'=>$cantidad,'oferta'=>$intoferta);
-}
+              }
  // echo $cantidad."el ID del producto es : <b>".$idProducto."</b> - el titulo es: <b>".$strTitulo."</b> - el codigo es: <b>".$strCodigoProducto."</b> - el Precio del producto es <b> $ ".$intPrecio.".- </b> ------";
 
 
@@ -110,7 +111,7 @@ if (isset($mi_carrito))$_SESSION['carrito']=$mi_carrito;
 
 <div class="tituloCarritoProseso">Purchase Detail</div>
 <br/><br/><br/><br/>
-
+<div class="container">
 <?php 
 		if (isset($mi_carrito)){
 				 $total=0;
@@ -118,41 +119,41 @@ if (isset($mi_carrito))$_SESSION['carrito']=$mi_carrito;
 				        if($mi_carrito[$i]<> NULL){		
 							?> 
 
-				<div class="carritoProseso">
+				<div class="carritoProseso row bg-<?php echo $mi_carrito[$i]['codigo']; ?>">
 
-					  <div class="fotoProseso">
-                           <img src="<?php echo 'public/img/productos/'.$mi_carrito[$i]['imagen']; ?> " height="45"/> 
-            </div>
+					  <div class="fotoProseso col-2">
+                           <img   src="<?php echo 'public/img/productos/'.$mi_carrito[$i]['imagen']; ?> "  /> 
+                      </div>
             
-						<div class="contentProseso"><?php echo ($mi_carrito[$i]['oferta']==1)?"<div class='circuloEsquina2'>OFERTA</div>":"";?>
-				                  <div class="tituloProseso">
+						<div class="contentProseso col-5"><?php echo ($mi_carrito[$i]['oferta']==1)?"<div class='circuloEsquina2'>OFERTA</div>":"";?>
+				            <div class="tituloProseso">
                                 <?php echo trabajo::corta_palabra($mi_carrito[$i]['nombre'],25); ?> 
-                          </div>
-							            <div class="marcaProseso">
+                            </div>
+							<div class="marcaProseso">
                                 <span><?php echo $mi_carrito[$i]['marca']; ?> |</span><span>| <?php echo $mi_carrito[$i]['volumen']; ?>  |</span><span>| Codigo: <?php echo $mi_carrito[$i]['codigo']; ?>  </span>
-                          </div>
+                           </div>
                           <div class="detalleProseso"id="ww">
                                 <?php echo $mi_carrito[$i]['descripcion']; ?>
                           </div>
-            </div>
+                       </div>
             
-						<div class="importeProseso">
-                      $<strong>  <?php echo $mi_carrito[$i]['precio']; ?></strong>
-            </div>
+						<div class="importeProseso col-1">
+                             $<strong>  <?php echo $mi_carrito[$i]['precio']; ?></strong>
+           				</div>
 
-						<div class="cantidadProseso" >
+						<div class="cantidadProseso col-2" >
 					        <form action="" method="post" name="actualizo">
 								    <input name="id2" type="hidden" value="<?php echo $i ?>" />
-								    <input class="inputNumber" name="cantidad2" type="number" value="<?php echo $mi_carrito[$i]['cantidad']; ?>"  min="1" max="24"width="15" height="15"  />
-								    <input name="" class="giro2" type="image" src="public/iconos/actualuzar3.png" align="middle" title="Cambie la Cantidad y presione este Boton para Actualizar" width="15" height="15" />
+								    <input class="inputNumber" name="cantidad2" type="number" value="<?php echo $mi_carrito[$i]['cantidad']; ?>"  min="1" max="99"   />
+								    <input name="" class="giro2" type="image" src="public/iconos/actualuzar3.png" align="middle" title="Cambie la Cantidad y presione este Boton para Actualizar" width="25" height="25" />
 							</form>
 						</div>	
 
-						<div class="subtotalProseso">
-                          $<strong><?php $subtotal= $mi_carrito[$i]['precio']*$mi_carrito[$i]['cantidad'];$total=$total+$subtotal;echo $subtotal; ?></strong> 
-            </div>			  
+						<div class="subtotalProseso col-1">
+                          $<strong> <?php $subtotal= $mi_carrito[$i]['precio']*$mi_carrito[$i]['cantidad'];$total=$total+$subtotal;echo $subtotal; ?></strong> 
+                        </div>			  
 						
-						<div class="borraProseso">
+						<div class="borraProseso col-1">
 				         <form action="" method="post" name="borrar">
 					            <input name="id3" type="hidden" value="<?php echo $i ?>" />
 					            <input name="" class="giro2" type="image" src="public/iconos/borrar1.png" align="middle" title="Sacar del Carrito el Producto" width="20" height="20" />
@@ -185,5 +186,5 @@ if (isset($mi_carrito))$_SESSION['carrito']=$mi_carrito;
 
  <button onclick = "location='supplylogistics'" class="buttonx grande verdeProseso fancybox fancybox.iframe" title="Continue Shopping" ><span> Continue Shopping <i class="icon icon-cart"></i></span></button>  				
  
-
+ </div>
 	 
