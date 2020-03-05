@@ -5824,13 +5824,17 @@ section:hover .small-item-carousel .owl-next {
   .sli-examples .item {
     width: 50%;
   }
+  
+  
 }
 
 @media only screen and (max-width: 480px) {
   .sli-examples .item {
     width: 100%;
   }
+
 }
+
 
 .sli-examples .item:hover {
   background: #f0f0f0;

@@ -251,7 +251,7 @@ a {
   /* background-color: yellow; */
 }
 
-#shopReturn {min-width: 500px; min-height: 400px; /*background-color: red;*/}
+#shopReturn {min-width: 300px; min-height: 400px; /*background-color: red;*/}
 
 footer {
   text-align: center;
@@ -1786,51 +1786,69 @@ ul#cinco {
   width: 80%;
   margin: 0 auto;
 }
+.contMenuShop {
+  width: 100px; 
+ /* background-color: yellowgreen;  */
+  display: block;
+  position: fixed;
+  top: 60px;
+  left: -90px;
+  z-index: 99999;
+}
+.contMenuShop:hover {
+  left:5px;
+}
+
+
+.ProdId { 
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
 
 .bg-1 {
-  background-color: #eb4034 !important;
+  background-color: #0F4C82 !important;
 }
 .bg-2 {
-  background-color: #ebbd34 !important;
+  background-color: #3981C1 !important;
 }
 .bg-3 {
-  background-color: #a8eb34 !important;
+  background-color: #8CB8D6 !important;
 }
 .bg-4 {
-  background-color: #3449eb !important;
+  background-color: #C2D5DE !important;
 }
 .bg-5 {
-  background-color: #c034eb !important;
+  background-color: #1974CE !important;
 }
 .bg-6 {
-  background-color: #e1eb34 !important;
+  background-color: #7CB5DD !important;
 }
 .bg-7 {
-  background-color: #34eb9f !important;
+  background-color: #9DC5DE !important;
 }
 .bg-8 {
-  background-color: #eb34a8 !important;
+  background-color: #009CB7 !important;
 }
 .bg-9 {
-  background-color: #ebae34 !important;
+  background-color: #ADDAE6 !important;
 }
 .bg-10 {
-  background-color: #eb3434!important;
+  background-color: #A0B2D5!important;
 }
 .bg-11 {
-  background-color: #d2eb34 !important;
+  background-color: #006699 !important;
 }
 .bg-12 {
-  background-color: #8934eb !important;
+  background-color: #00327B !important;
 }
 .bg-13 {
-  background-color: #b1eb34 !important;
+  background-color: #6484C5 !important;
 }
 .bg-14 {
-  background-color: #3437eb !important;
+  background-color: #BFD1E5 !important;
 }
 .bg-15 {
-  background-color: #eb3434 !important;
+  background-color: #004466 !important;
  
 }
 
@@ -1894,4 +1912,21 @@ color: cornflowerblue !important;
 
 .contSliderNot {
     text-align: center;
+}
+
+
+@media only screen and (max-width: 540px) {
+   
+  
+  .contMenuShop {
+    width: 100%;
+    height: 50px;
+    /* background-color: red; */
+    vertical-align: middle;
+    display: block;
+    position: fixed;
+    top: 60px;
+    left: 0px;
+    z-index: 99999;
+  }
 }

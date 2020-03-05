@@ -1,10 +1,16 @@
+</br></br> 
 <?php 
    if(session_id()=="")
    {
       session_start();
    }
- 
-$id = $_POST["idProd"];
+
+if (isset($_POST["idProd"])) {
+  $id = $_POST["idProd"];
+} else {
+  $id = 4;
+}
+
 // echo $id;
 
                require_once "UploadClass.php";
@@ -55,8 +61,8 @@ $id = $_POST["idProd"];
  
                    <div class="precio-unidad">
                     <span class="precio-referencia">	$	</span>	
-                    <span>		<?php echo 6*$productos[$i]['floatProdPrecio']  ?>	</span> 
-                    <span class="precio-referencia">	x 6 un.	</span>
+                    <span>		<?php echo 12*$productos[$i]['floatProdPrecio']  ?>	</span> 
+                    <span class="precio-referencia">	x 12 un.	</span>
                     <br>	
                           <p style="font-size: 10px; color: #fff; font-weight: normal; margin-bottom: 0px;">.
                           </p>
@@ -68,9 +74,9 @@ $id = $_POST["idProd"];
                   </div>
 
 
-                  <div class="precio-referencia">
-                      $ 	<?php echo $productos[$i]['floatProdPrecio'] ?> x Unidad
-                  </div>	
+          <!--        <div class="precio-referencia">
+                      $ 	<?php //echo $productos[$i]['floatProdPrecio']; ?> x Unidad
+                  </div>	-->
                 
                   <div class="action-control">                                              
                       <a id='compra<?php echo $productos[$i]['id_producto']?> ' class="btn btn-primary btn-lg "   title='to Buy' href='prosesos?RecordId=<?php echo $productos[$i]['id_producto'] ?>&Foto=<?php echo $productos[$i]['strProdImagenThumb']?>&Titulo=<?php echo $productos[$i]['strProdNombProducto']?>&Codigo=<?php echo $productos[$i]['id_categProd'];?>-k-<?php echo $productos[$i]['id_subcategProd']?>-k-<?php echo $productos[$i]['id_producto']?>&Importe=<?php echo $productos[$i]['floatProdPrecio']?>&ProdMarca=<?php echo $productos[$i]['strProdMarca']?>&ProdVolumen=<?php echo $productos[$i]['strProdVolumen']?>&ProdDescripcion=<?php echo $productos[$i]['strProdDescripcion']?>&Cantidad=6&Oferta=<?php echo $productos[$i]['strOferta']?>'>

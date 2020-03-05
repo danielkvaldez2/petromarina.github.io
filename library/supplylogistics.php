@@ -106,12 +106,12 @@
 
 
 <section class='supply'>   
-    <div id="container ">
+    <div class="container ">
       
-
+<div class="contMenuShop">
    <div class="btn-group" role="group">
-    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      PRODUCT
+    <button id="btnGroupDrop1" type="button" class="btn btn-primary  dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Click Here">
+      PRODUCTS &nbsp;&nbsp;  <span class="add2cart"> <i class="fa fa-shopping-cart"></i></span>
     </button>
     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
  
@@ -127,12 +127,14 @@
    </div>
   </div>       
         
+  </div>
+
     </div> <!-- <div id="contenedor">-->    
-</section><!-- fin resultado de la busqueda supplylogistic --> 
+</section><!-- fin resultado de la busqueda supplylogistic<img src="../img/ajax-loader.gif" alt="">--> 
 
 <section class='supply'>   
-    <div id="shopReturn">
-        
+    <div id="shopReturn" >
+       <?php include_once "supplylogisticsView.php"; ?>
     </div>   
 </section><!-- fin resultado de la busqueda supplylogistic --> 
 
