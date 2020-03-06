@@ -45,7 +45,77 @@
 	
 	// $nombreImagenPorts = "Port-0".$id_insert."-".$imagen; 
 	$nombreImagenShop = $archivo1; 
+	
+	if(isset($_FILES["imagen"]) && $_FILES["imagen"] != "")
+	{
+		$file = $_FILES["imagen"];
+		$nombre = $file["name"];
+		$tipo = $file["type"];
+		$ruta_provisional = $file["tmp_name"];
+		$size = $file["size"];
+		$dimensiones = getImageSize($ruta_provisional);
+		$width = $dimensiones[0];
+		$height = $dimensiones[1];
+		$carpeta = "../../library/public/img/productos/";
+		 
+			$ancho = 150;
+			if ($ancho < $width) 
+			{
+				$alto = intval($height * $ancho / $width);
+					if( $tipo == 'image/jpeg' || $tipo == 'image/JPEG' || $tipo == 'image/jpg' || $tipo == 'image/JPG')
+						{
+							$viejaimagen = imagecreatefromjpeg($ruta_provisional);
+							$nuevaimagen = imagecreatetruecolor($ancho, $alto); 
+							imagecopyresampled($nuevaimagen, $viejaimagen, 0, 0, 0, 0, $ancho, $alto, $width, $height);
+	
+							 $name01 = "Shop_Orig_$nombre" ;
+								$name02 = "Shop_Mini_$nombre" ;
+	
+							$original = $carpeta."originales/".$name01;
+							$src = $carpeta."miniatura/".$name02;
+							copy($ruta_provisional, $original); 																//imagen.jpg
+							imagejpeg($nuevaimagen, $src); 									//copia_imagen.jpg si saco el copia me muestra no guarda
+						}
+					   if( $tipo == 'image/png' || $tipo == 'image/PNG')
+						{
+							$viejaimagen = imagecreatefrompng($ruta_provisional);
+							$nuevaimagen = imagecreatetruecolor($ancho, $alto);
+							imagecopyresampled($nuevaimagen, $viejaimagen, 0, 0, 0, 0, $ancho, $alto, $width, $height);
+	
+							 $name01 = "Shop_Orig_$nombre" ;
+								$name02 = "Shop_Mini_$nombre" ;
+	
+							$original = $carpeta."originales/".$name01;
+							$src = $carpeta."miniatura/".$name02;
+							copy($ruta_provisional, $original); 																//imagen.jpg
+							imagepng($nuevaimagen, $src); 									//copia_imagen.jpg si saco el copia me muestra no guarda
+						}
+			
+		   
+				
+			   
+	
+			}else{
+			  $carpeta = "../../library/public/img/productos/";
+			  $nombre = $_FILES["imagen"]["name"];
+			  $name01 = "Shop_Orig_$nombre" ;
+			  $name02 = "Shop_Mini_$nombre" ;
+			  $original = $carpeta."originales/".$name01;
+			  $src = $carpeta."miniatura/".$name02;
+			  copy($_FILES["imagen"]["tmp_name"], $original);  
+			  @move_uploaded_file($_FILES["imagen"]["tmp_name"], $src);
+			}
+	
+	}else{
+			   echo "No se Guardo Archivo.";
+	}
 
+
+
+
+
+	
+/*  
 	if($_FILES["imagen"]["error"]>0){
 		echo "Error al cargar archivo";	
 		} else {
@@ -79,7 +149,7 @@
 		}
 		
 	}
-	
+	*/
 	
 ?>
 

@@ -16,19 +16,75 @@
    
    $rowUser = $result->fetch_assoc();
 
-	
- 
-
 	  
 ?>
 
 <html>
 <head>
-		<title>Welcome</title>
+<title>Welcome</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">	
+
+
 		
+
+<style type="text/css">
+
 	
+
+	img {width: 100%}
+
+.thumbnail {
+	width: 371px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+#respuesta {
+	position: relative;
+}
+#respuesta a {
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+	right: 5px;
+	display: none;
+}
+#file-info { 
+	width: 171px;
+	display: none;
+}
+
+input[type=file] {
+	position: absolute;
+	visibility: hidden;
+	width: 0;
+	z-index: -9999;
+}
+#file-save {
+	width: 171px;
+}
+.btn1{
+	
+	padding: 10px;
+	margin: 10px auto;
+	display: block;
+	border-radius: 10px;
+	text-align: center;
+	text-decoration: none;
+	overflow: hidden;
+	box-sizing:border-box;
+}
+.btn1:hover {box-shadow:0.1em 0.2em 0.15em rgba(0,0,0,.5)}
+.warning {background: #EF981D;color:white;border: thin solid #C0C0C0;}
+.warning:hover {background: #F0AD4E;color:white;text-shadow:0.15em 0.10em 0.15em rgba(0,0,0,.5);cursor:pointer;}
+.success {background:#419341 ;color:white;border: thin solid #C0C0C0}
+.success:hover {background:#4CAE4C ;color:white;text-shadow:0.15em 0.10em 0.15em rgba(0,0,0,.5);cursor:pointer;}
+.successh {background:#A5FC77 ;color:white;text-shadow:0.1em 0.2em 0.15em rgba(0,0,0,.5);cursor:pointer;}
+.danger {background:#D4332D;color:white;border: thin solid #C0C0C0}
+.danger:hover {background:#D43F3A  ;color:white;text-shadow:0.15em 0.10em 0.15em rgba(0,0,0,.5);cursor:pointer;}
+.default {background:#C4E7F7;color:white;border: thin solid #C0C0C0}
+.default:hover {background:#D2EBF7  ;color:white;text-shadow:0.15em 0.10em 0.15em rgba(0,0,0,.5);cursor:pointer;}
+</style>	
 	 
 </head>
 	
@@ -75,19 +131,21 @@
 
 
 			<div class="shadow p-3 mb-5 bg-white rounded">
-			<div class="card" >
-				<img src="../../library/public/img/productos/5.jpg" class="card-img-top" height="300" width ="400" alt="Imagen">
-				</div> 
-			</div> 
-			<div class="form-group row">
-			<label for="imagen" class="col-sm-2 col-form-label">Imagen:</label>	
-			<div class="col-sm-10">
-				<div class="custom-file">
-					<input type="file" class="custom-file-input" id="imagen" name="imagen" >
-					<label class="custom-file-label" for="imagen">Choose file...</label>
+			
+				<div id="respuesta" class="thumbnail">  <!-- preview * respuestao -->
+					<a href="#" id="file-select" class="btn1 default" title="Seleccionar Imagen JPEG - PNG">+ Seleccionar Imagen</a>
+					<img src="img/shop-login.jpg"/>
 				</div>
-			</div>
-			</div>
+				<span  id="file-info" class="btn1 default">No hay archivo aún</span>
+
+				<form method="post" id="formImagen" name="formImagen" enctype="multipart/form-data"> <!-- file-submit * formulario1 -->
+					<input type="file" id="imagen" name="imagen" />
+				</form>
+
+				
+		
+			</div>  
+			
 
 			<div class="shadow p-3 mb-5 bg-white rounded">
 
@@ -193,6 +251,46 @@
 </script>
 
 <script type = 'text/javascript' src = 'https://platform-api.sharethis.com/js/sharethis.js#property=5e4bd4faeac6ff0012aa5888&product=inline-share-buttons' async = 'async'> </script>
+
+<script type="text/javascript" src="../../js/jquery-3.4.1.min.js"></script>
+
+<!--<link rel='stylesheet' type='text/css' href='css/bootstrap.min.css' />-->
+<script>
+$(document).ready(function() {
+   var formData;//variable global
+		$('#respuesta').hover(
+			function() {
+				$(this).find('a').fadeIn();
+			}, function() {
+				$(this).find('a').fadeOut();
+		});
+
+
+		$('#file-select').on('click', function (e) {
+			 e.preventDefault();		   
+			 $('#imagen').click();
+		});
+
+
+		$('input[type=file]').change(function (e) {
+			     var formData = new FormData();
+				 formData.append('archivo',document.getElementById('formImagen'));
+
+				//	formData = new FormData(document.getElementById("formulario1"));//cargo variable global
+					var file = (this.files[0].name).toString(); //muestra nombre
+					var reader = new FileReader();              //muestra imagen
+					$('#file-info').css('display','block');  
+					$('#file-info').text('');
+					$('#file-info').text(file);
+					reader.onload = function (e) { $('#respuesta img').attr('src', e.target.result); }  // coloca imagen
+					reader.readAsDataURL(this.files[0]);
+	   });	 
+
+
+  
+});
+</script>
+
 	
 
 </body>

@@ -127,7 +127,7 @@
 			<?php	} else {
 				 ?>    <tr  >	
 		<?php }	?>	
-				<td class="text-center"><img  height="40px" src="../../library/public/img/productos/<?php echo $row['strProdImagen']; ?>"></td>	
+				<td class="text-center"><img  height="40px" src="../../library/public/img/productos/miniatura/Shop_Mini_<?php echo $row['strProdImagen']; ?>"></td>	
 				<td class="text-center"> <?php echo $row['id_categProd']; ?> </td>
 				<td class="text-center">
 					<div class="qg-<?php echo $row['id_categProd']; ?> bg-<?php echo $row['id_categProd']; ?>" > X </div>
