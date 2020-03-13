@@ -17,7 +17,8 @@
             <li> <a href="library/blog-list"> Blogs</a> </li>
             <li> <a href="library/supplylogistics"> Shop</a> </li>
             <li> <a href="library/priceBunker"> Bunkers </a> </li>
-            <li> <a href="vesselsonline"> Maps</a> </li>
+            <li> <a href="vesselsonline"> Ships</a> </li>
+            <li> <a href="vesselsonlinePort"> Maps Ports</a> </li>
             <li> <a href='library/portsPetromarina'> Ports</a> </li>
             <li> <a href='library/databaseShips'>Ships DB</a> </li>
             <li> <a href="index.php#contact">Contacts</a> </li>
